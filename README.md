@@ -4,37 +4,37 @@ https://www.figma.com/design/lOquh5Rjs8hRw0eabhfMRE/AGRIRS?t=vFFsgACUIBLXJYoF-0
 # Apresentação da 
 A equipe 404 Not Found é constituída de alunos do primeiro semestre do curso de Desenvolvimento de Software Multiplataforma.
 
-1. Ariana Ferreira dos Santos (Desenvolvedora)
-- Git. https.//github.com/arianaferresan
-- Linkedin. https.//br.linkedin.com/in/arianaferreira
-
-2. Pedro Gonçalves Sampaio (Scrum Master)
-- Git. https.//github.com/PedroSmp
-- LinkedIn. https.//www.linkedin.com/in/pedro-sampaio-463a77375
-
-3. João Otávio Nunes de Mesquita (Desenvolvedor)
-- Git. https.//github.com/jotavionm
-- LinkedIn. https.//www.linkedin.com/in/jo%C3%A3o-ot%C3%A1vio-nunes-mesquita/
-
-4. Felipe Faria Machado (Desenvolvedor)
-- Git. https.//github.com/Felipe1781
-- LinkedIn. https.//www.linkedin.com/in/felipefariamachado
-
-5. João Augusto Leal Neto (Desenvolvedor)
-- Git. https.//github.com/lealdev7
-- LinkedIn. https.//www.linkedin.com/in/jo%C3%A3o-leal-558071385/
-
-6. William Max dos Santos Silva Silva (Desenvolvedor)
-- Git. https.//github.com/WilliamM4x
-- LinkedIn. https.//www.linkedin.com/in/william-max-7b8036140/
-
-7. Eloah Sousa da Silva (Project Owner)
+Eloah Sousa da Silva (Project Owner)
 - Git. https.//github.com/eloahsousaa
 - LinkedIn. https.//www.linkedin.com/in/eloah-sousa-650038349/
 
-8. Luiza (Desenvolvedora)
+Pedro Gonçalves Sampaio (Scrum Master)
+- Git. https.//github.com/PedroSmp
+- LinkedIn. https.//www.linkedin.com/in/pedro-sampaio-463a77375
+
+Ariana Ferreira dos Santos (Desenvolvedora)
+- Git. https.//github.com/arianaferresan
+- Linkedin. https.//br.linkedin.com/in/arianaferreira
+
+Felipe Faria Machado (Desenvolvedor)
+- Git. https.//github.com/Felipe1781
+- LinkedIn. https.//www.linkedin.com/in/felipefariamachado
+
+João Augusto Leal Neto (Desenvolvedor)
+- Git. https.//github.com/lealdev7
+- LinkedIn. https.//www.linkedin.com/in/jo%C3%A3o-leal-558071385/
+
+João Otávio Nunes de Mesquita (Desenvolvedor)
+- Git. https.//github.com/jotavionm
+- LinkedIn. https.//www.linkedin.com/in/jo%C3%A3o-ot%C3%A1vio-nunes-mesquita/
+
+Luiza Gonçales Manchini (Desenvolvedora)
 - Git. 
-- LinkedIn. 
+- LinkedIn: https://www.linkedin.com/in/luiza-manchini-b51a7b336/
+
+William Max dos Santos Silva Silva (Desenvolvedor)
+- Git. https.//github.com/WilliamM4x
+- LinkedIn. https.//www.linkedin.com/in/william-max-7b8036140/
 
 # Titulo do projeto
 Website do Laboratório de Sensoriamento Remoto Agrícola do INPE (AgriRS Lab).
