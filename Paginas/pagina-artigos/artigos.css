@@ -1,13 +1,21 @@
 /* Variáveis para cores baseadas na imagem */
 :root {
-    --color-background-page: #e9f5e9; /* Verde muito claro, quase branco */
-    --color-header-footer: #0a4f0a; /* Verde escuro para barra e rodapé */
-    --color-card-background: #d4e8f8; /* Azul claro para o card */
+    --color-background-page: #F8F9Fa;
+    /* Verde muito claro, quase branco */
+    --color-header-footer: #36794E;
+    /* Verde escuro para barra e rodapé */
+    --color-card-background: #d4e8f8;
+    /* Azul claro para o card */
     --color-text-dark: #333;
-    --color-title-green: #006000; /* Verde escuro para títulos de seção */
-    --color-link-blue: #007bff; /* Azul padrão para links */
+    --color-title-green: #55A357;
+    /* Verde escuro para títulos de seção */
+    --color-link-blue: #0F5289;
+    /* Azul padrão para links */
     --color-search-btn: #f0f0f0;
+    --cor-fundo-footer: #604639;
+    --cor-azul-2: #487DB4;
 }
+
 
 /* Reset e Fonte */
 * {
@@ -31,7 +39,8 @@ body {
 /* 2. Top Bar (Logo, Título e Pesquisa/Contato) */
 .top-header {
     padding: 10px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória sutil */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* Linha divisória sutil */
 }
 
 .header-content {
@@ -49,15 +58,15 @@ body {
 }
 
 .site-logo {
-    width: 120px; 
-    height: auto; 
+    width: 120px;
+    height: auto;
 }
 
 /* Estilo do Título "Publicações" no Header */
 .page-header-title {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-left: 10px; 
+    margin-left: 10px;
     color: white;
 }
 
@@ -69,10 +78,10 @@ body {
 .search-box {
     display: flex;
     align-items: center;
-    border: 1px solid white;
+    border: 1px solid var(--color-search-btn);
     border-radius: 4px;
     overflow: hidden;
-    margin-right: 15px; 
+    margin-right: 15px;
 }
 
 .search-box input {
@@ -90,10 +99,13 @@ body {
     background-color: var(--color-search-btn);
     color: var(--color-text-dark);
     cursor: pointer;
+    
 }
 
+
 .btn-contato {
-    background-color: #f4c20d; /* Amarelo */
+    background-color: #f4c20d;
+    /* Amarelo */
     color: var(--color-text-dark);
     text-decoration: none;
     padding: 5px 15px;
@@ -105,9 +117,10 @@ body {
 /* 3. Navigation Bar (Links principais) */
 .main-nav-bar {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     padding: 10px 0;
-    border-bottom: 2px solid #000; /* Linha preta final */
+    border-bottom: 2px solid #000;
+    /* Linha preta final */
 }
 
 .main-nav-bar a {
@@ -132,20 +145,24 @@ body {
     margin-bottom: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     display: flex;
-    justify-content: center; /* Centraliza a barra na horizontal */
+    justify-content: center;
+    /* Centraliza a barra na horizontal */
     border-bottom: 1px solid #ddd;
-    gap: 15px; /* Espaçamento entre os filtros */
-    position: relative; /* Necessário para posicionar os painéis */
+    gap: 15px;
+    /* Espaçamento entre os filtros */
+    position: relative;
+    /* Necessário para posicionar os painéis */
 }
 
 .filter-dropdown {
     position: relative;
-    z-index: 10; /* Garante que os dropdowns apareçam sobre o conteúdo abaixo */
+    z-index: 10;
+    /* Garante que os dropdowns apareçam sobre o conteúdo abaixo */
 }
 
 .filter-toggle {
     /* Estilo do botão visível (o que o usuário clica) */
-    background-color: white; 
+    background-color: white;
     color: var(--color-text-dark);
     border: 1px solid #ccc;
     padding: 8px 15px;
@@ -165,7 +182,8 @@ body {
 
 /* Estilo para o botão ATIVO (após o clique) */
 .filter-dropdown.open .filter-toggle {
-    background-color: var(--color-link-blue); /* Fundo azul quando aberto */
+    background-color: var(--color-link-blue);
+    /* Fundo azul quando aberto */
     color: white;
     border-color: var(--color-link-blue);
 }
@@ -173,7 +191,8 @@ body {
 /* Estilo para o Painel de Opções (Dropdown Content) */
 .filter-panel {
     position: absolute;
-    top: 100%; /* Posiciona logo abaixo do botão */
+    top: 100%;
+    /* Posiciona logo abaixo do botão */
     left: 0;
     background-color: white;
     border: 1px solid #ccc;
@@ -183,16 +202,16 @@ body {
     margin-top: 5px;
     min-width: 220px;
     z-index: 20;
-    
+
     /* Inicialmente escondido pelo CSS */
-    display: none; 
+    display: none;
     flex-direction: column;
     gap: 8px;
 }
 
 /* Estado de exibição forçado pelo JavaScript */
 .filter-dropdown.open .filter-panel {
-    display: flex; 
+    display: flex;
 }
 
 /* Estilo dos elementos internos (inputs e labels) */
@@ -218,12 +237,13 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9rem;
-    align-self: flex-end; /* Alinha o botão à direita */
+    align-self: flex-end;
+    /* Alinha o botão à direita */
 }
 
 
 .publicacao.hidden {
-    display: none !important; 
+    display: none !important;
 }
 
 
@@ -243,24 +263,24 @@ body {
 
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
 .publication-card {
-    background-color: var(--color-card-background); 
-    border-radius: 12px; 
+    background-color: var(--color-card-background);
+    border-radius: 12px;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     text-align: center;
-    height: 100%; 
+    height: 100%;
 }
 
 .card-image-box {
     background-color: white;
-    border: 1px solid #cce; 
+    border: 1px solid #cce;
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 10px;
@@ -268,7 +288,7 @@ body {
 
 .card-image-box img {
     width: 100%;
-    height: 160px; 
+    height: 160px;
     object-fit: cover;
     display: block;
 }
@@ -277,16 +297,16 @@ body {
     font-size: 0.95rem;
     font-weight: 400;
     color: #444;
-    flex-grow: 1; 
+    flex-grow: 1;
     margin-bottom: 15px;
     line-height: 1.4;
 }
 
 .card-links {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     gap: 10px;
-    margin-top: auto; 
+    margin-top: auto;
 }
 
 .btn-card {
@@ -309,7 +329,7 @@ body {
 
 /* 7. Rodapé */
 .main-footer {
-    background-color: #f7f7f7; 
+    background-color: #f7f7f7;
     border-top: 1px solid #ddd;
     margin-top: 40px;
     padding: 30px 20px;
@@ -325,7 +345,7 @@ body {
 }
 
 .footer-logo-footer img {
-    width: 100px; 
+    width: 100px;
     margin-bottom: 10px;
 }
 
@@ -358,6 +378,8 @@ body {
 .map-placeholder {
     width: 100%;
     height: 180px;
-    background-color: #ccc; 
+    background-color: #ccc;
     border: 1px solid #999;
 }
+
+

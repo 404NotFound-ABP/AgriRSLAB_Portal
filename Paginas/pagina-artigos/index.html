@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="artigos.js"></script>
 </head>
+
 <body>
 
     <header class="main-header">
-        
+
         <div class="top-header">
             <div class="header-content">
-                
+
                 <div class="logo-title-area">
                     <a href="/" class="logo-area">
                         <img src="c:\Users\LAB-79\Pictures\logo agrirs.png" alt="Logo da Organização" class="site-logo">
@@ -42,194 +44,214 @@
             <a href="#">Vagas</a>
         </nav>
     </header>
-    
-<nav class="interactive-filters">
-    
-    <div class="filter-dropdown" data-filter-name="ano">
-        <button class="filter-toggle" aria-expanded="false" aria-controls="panel-ano">
-            Título/Ano <span class="arrow-icon">▼</span>
-        </button>
-        <div class="filter-panel" id="panel-ano">
-            <input type="text" placeholder="Buscar por título ou ano..." class="filter-input-text">
-            <button class="btn-apply-filter">Aplicar</button>
-        </div>
-    </div>
 
-    <div class="filter-dropdown" data-filter-name="tipo">
-        <button class="filter-toggle" aria-expanded="false" aria-controls="panel-tipo">
-            Tipo de Publicação <span class="arrow-icon">▼</span>
-        </button>
-        <div class="filter-panel" id="panel-tipo">
-            <label><input type="checkbox" value="artigos"> Artigos</label>
-            <label><input type="checkbox" value="ac"> Artigos de Conferência (AC)</label>
-            <label><input type="checkbox" value="livros"> Livros</label>
-            <label><input type="checkbox" value="outros"> Outros</label>
-            <button class="btn-apply-filter">Aplicar</button>
+    <nav class="interactive-filters">
+        <div class="header-actions">
+            <div class="search-box">
+                <input type="text" placeholder="Pesquisar">
+                <button aria-label="Pesquisar">🔍</button>
+            </div>
         </div>
-    </div>
+        <div class="filter-dropdown" data-filter-name="ano">
+            <button class="filter-toggle" aria-expanded="false" aria-controls="panel-ano">
+                Título/Ano <span class="arrow-icon">▼</span>
+            </button>
+            <div class="filter-panel" id="panel-ano">
+                <input type="text" placeholder="Buscar por título ou ano..." class="filter-input-text">
+                <button class="btn-apply-filter">Aplicar</button>
+            </div>
+        </div>
+        <div class="filter-dropdown" data-filter-name="tipo">
+            <button class="filter-toggle" aria-expanded="false" aria-controls="panel-tipo">
+                Tipo de Publicação <span class="arrow-icon">▼</span>
+            </button>
+            <div class="filter-panel" id="panel-tipo">
+                <input type="checkbox" value="artigos"> Artigos</label>
+                <input type="checkbox" value="ac"> Artigos de Conferência (AC)</label>
+                <input type="checkbox" value="livros"> Livros</label>
+                <input type="checkbox" value="outros"> Outros</label>
+                <button class="btn-apply-filter">Aplicar</button>
+            </div>
+        </div>
 
-    <div class="filter-dropdown" data-filter-name="autor">
-        <button class="filter-toggle" aria-expanded="false" aria-controls="panel-autor">
-            Autor/Membro <span class="arrow-icon">▼</span>
-        </button>
-        <div class="filter-panel" id="panel-autor">
-            <input type="text" placeholder="Buscar por autor/membro..." class="filter-input-text">
-            <button class="btn-apply-filter">Aplicar</button>
+
+        <div class="filter-dropdown" data-filter-name="autor">
+            <button class="filter-toggle" aria-expanded="false" aria-controls="panel-autor">
+                Autor/Membro <span class="arrow-icon">▼</span>
+            </button>
+            <div class="filter-panel" id="panel-autor">
+                <input type="text" placeholder="Buscar por autor/membro..." class="filter-input-text">
+                <button class="btn-apply-filter">Aplicar</button>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <main class="publications-main-content">
-        
+
         <section class="publications-section">
             <h2 class="section-title">Artigos (09)</h2>
             <div class="cards-grid">
-                
+
                 <div class="publication-card article-card publicacao artigos">
                     <div class="card-image-box">
-                        <img src="c:\Users\LAB-79\Downloads\Figura_A1_GR.jpg" alt="Capa da Publicação"> 
+                        <img src="../../imagens/3.0 Publicações/Figura_A1_GR.jpg" alt="Capa da Publicação">
                     </div>
-                    <p class="card-title">Simulating deep sowing and other management practices effects on soybean emergence using a hydro-thermal analysis.</p>
+                    <p class="card-title">Simulating deep sowing and other management practices effects on soybean
+                        emergence using a hydro-thermal analysis.</p>
                     <div class="card-links">
-                        <a href="#" class="btn-card doi">DOI</a>
+                        <a href="https://doi.org/10.3390/rs15225366" class="btn-card doi">DOI</a>
                         <a href="#" class="btn-card pdf">PDF</a>
                     </div>
                 </div>
 
                 <div class="publication-card article-card publicacao artigos">
                     <div class="card-image-box">
-                        <img src="c:\Users\LAB-79\Downloads\Figura_A2_NS.png" alt="Capa da Publicação"> 
+                        <img src="../../imagens/3.0 Publicações/Figura_A2_NS.png" alt="Capa da Publicação">
                     </div>
-                    <p class="card-title">Sugarcane Yield Estimation Using Satellite Remote Sensing Data in Empirical or Mechanistic Modeling: A Systematic Review.</p>
+                    <p class="card-title">Sugarcane Yield Estimation Using Satellite Remote Sensing Data in Empirical or
+                        Mechanistic Modeling: A Systematic Review.</p>
                     <div class="card-links">
-                        <a href="#" class="btn-card doi">DOI</a>
+                        <a href="https://doi.org/10.3390/rs16050863" class="btn-card doi">DOI</a>
                         <a href="#" class="btn-card pdf">PDF</a>
                     </div>
                 </div>
 
                 <div class="publication-card article-card publicacao artigos">
                     <div class="card-image-box">
-                        <img src="c:\Users\LAB-79\Downloads\Figura_A3_VP.png" alt="Capa da Publicação"> 
+                        <img src="../../imagens/3.0 Publicações/Figura_A3_VP.png" alt="Capa da Publicação">
                     </div>
-                    <p class="card-title">Limitations of cloud cover for optical remote sensing of agricultural areas across South America.</p>
+                    <p class="card-title">Limitations of cloud cover for optical remote sensing of agricultural areas
+                        across South America.</p>
                     <div class="card-links">
-                        <a href="#" class="btn-card doi">DOI</a>
-                        <a href="#" class="btn-card pdf">PDF</a>
-                    </div>
-                </div>
-                
-                <div class="publication-card article-card publicacao artigos">
-                    <div class="card-image-box">
-                        <img src="c:\Users\LAB-79\Downloads\Figura_A4_PS.png" alt="Capa da Publicação"> 
-                    </div>
-                    <p class="card-title">Land Use and Land Cover Products for Agricultural Mapping Applications in Brazil: Challenges and Limitations.</p>
-                    <div class="card-links">
-                        <a href="#" class="btn-card doi">DOI</a>
+                        <a href="https://doi.org/10.1016/j.rsase.2020.100414" class="btn-card doi">DOI</a>
                         <a href="#" class="btn-card pdf">PDF</a>
                     </div>
                 </div>
 
                 <div class="publication-card article-card publicacao artigos">
                     <div class="card-image-box">
-                        <img src="c:\Users\LAB-79\Downloads\Figura_A5_CS.jpeg" alt="Capa da Publicação"> 
+                        <img src="../../imagens/3.0 Publicações/Figura_A4_PS.png" alt="Capa da Publicação">
                     </div>
-                    <p class="card-title">A Method for Estimating Soybean Sowing, Beginning Seed, and Harvesting Dates in Brazil Using NDVI-MODIS Data.</p>
+                    <p class="card-title">Land Use and Land Cover Products for Agricultural Mapping Applications in
+                        Brazil: Challenges and Limitations.</p>
                     <div class="card-links">
-                        <a href="#" class="btn-card doi">DOI</a>
+                        <a href="https://doi.org/10.3390/rs17132324" class="btn-card doi">DOI</a>
                         <a href="#" class="btn-card pdf">PDF</a>
                     </div>
                 </div>
 
                 <div class="publication-card article-card publicacao artigos">
                     <div class="card-image-box">
-                        <img src="c:\Users\LAB-79\Downloads\Figura_A6_AG.png" alt="Capa da Publicação"> 
+                        <img src="../../imagens/3.0 Publicações/Figura_A5_CS.jpeg" alt="Capa da Publicação">
+                    </div>
+                    <p class="card-title">A Method for Estimating Soybean Sowing, Beginning Seed, and Harvesting Dates
+                        in Brazil Using NDVI-MODIS Data.</p>
+                    <div class="card-links">
+                        <a href="https://doi.org/10.3390/rs16142520" class="btn-card doi">DOI</a>
+                        <a href="#" class="btn-card pdf">PDF</a>
+                    </div>
+                </div>
+
+                <div class="publication-card article-card publicacao artigos">
+                    <div class="card-image-box">
+                        <img src="../../imagens/3.0 Publicações/Figura_A6_AG.png" alt="Capa da Publicação">
                     </div>
                     <p class="card-title"></p>
                     <div class="card-links">
-                        <a href="#" class="btn-card doi">DOI</a>
+                        <a href="https://doi.org/10.1016/j.acags.2025.100223" class="btn-card doi">DOI</a>
                         <a href="#" class="btn-card pdf">PDF</a>
                     </div>
                 </div>
 
                 <div class="publication-card article-card publicacao artigos">
                     <div class="card-image-box">
-                        <img src="c:\Users\LAB-79\Downloads\Figura_A7_AG.png" alt="Capa da Publicação"> 
+                        <img src="../../imagens/3.0 Publicações/Figura_A7_AG.png" alt="Capa da Publicação">
                     </div>
-                    <p class="card-title">Growth stage according to different thermal time accumulation methods and their effects on the growth cycle.</p>
+                    <p class="card-title">Growth stage according to different thermal time accumulation methods and
+                        their effects on the growth cycle.</p>
                     <div class="card-links">
-                        <a href="#" class="btn-card doi">DOI</a>
+                        <a href="https://doi.org/10.3390/agriengineering7030065" class="btn-card doi">DOI</a>
                         <a href="#" class="btn-card pdf">PDF</a>
                     </div>
                 </div>
 
                 <div class="publication-card article-card publicacao artigos">
                     <div class="card-image-box">
-                        <img src="c:\Users\LAB-79\Downloads\Figura_A8_AG.png" alt="Capa da Publicação"> 
+                        <img src="../../imagens/3.0 Publicações/Figura_A8_AG.png" alt="Capa da Publicação">
                     </div>
                     <p class="card-title">Título do Artigo 8 - Conteúdo não visível, mantendo o formato de card.</p>
                     <div class="card-links">
-                        <a href="#" class="btn-card doi">DOI</a>
+                        <a href="https://doi.org/10.5753/jidm.2025.4181" class="btn-card doi">DOI</a>
                         <a href="#" class="btn-card pdf">PDF</a>
                     </div>
                 </div>
-                
+
         </section>
 
         <section class="publications-section">
             <h2 class="section-title">Artigos de Conferência (AC)</h2>
             <div class="cards-grid">
-                
+
                 <div class="publication-card conference-card publicacao ac">
                     <div class="card-image-box">
-                        <img src="card-image-placeholder.jpg" alt="Capa da Publicação"> 
+                        <img src="../../imagens/3.0 Publicações/Figura_AC1_PS.png" alt="Capa da Publicação">
                     </div>
-                    <p class="card-title">Avaliando doses de nitrogênio em milho segunda safra (safrinha) no sul de Goiás, 2022 mediante estimativa da biomassa aérea com drones e sensoriamento remoto.</p>
+                    <p class="card-title">Avaliação do uso e cobertura da terra no Mato Grosso entre 1985-2020: mudanças
+                        associadas à expansão agropecuária e supressão de áreas florestais </p>
                     <div class="card-links">
-                        <a href="#" class="btn-card doi">SBSR</a>
+                        <a href="https://proceedings.science/sbsr/sbsr-2023/trabalhos/avaliacao-do-uso-e-cobertura-da-terra-no-mato-grosso-entre-1985-2020-mudancas-as?lang=pt-br"
+                            class="btn-card doi">SBSR</a>
                         <a href="#" class="btn-card pdf">PDF</a>
                     </div>
                 </div>
 
                 <div class="publication-card conference-card publicacao ac">
                     <div class="card-image-box">
-                        <img src="card-image-placeholder.jpg" alt="Capa da Publicação"> 
+                        <img src="../../imagens/3.0 Publicações/Figura_AC2_PS.jpg" alt="Capa da Publicação">
                     </div>
-                    <p class="card-title">Sentinel-2 multi-temporal monitoring time series analysis for crop-type classification.</p>
+                    <p class="card-title">Sentinel-2 multi-temporal monitoring time series analysis for crop-type
+                        classification.</p>
                     <div class="card-links">
-                        <a href="#" class="btn-card cnvm">SBSR</a>
+                        <a href="https://proceedings.science/sbsr/sbsr-2023/trabalhos/sentinel-2-multidimensional-data-cubes-for-crop-monitoring-time-series-classific?lang=pt-br"
+                            class="btn-card cnvm">SBSR</a>
                         <a href="#" class="btn-card pdf">PDF</a>
                     </div>
                 </div>
 
                 <div class="publication-card conference-card publicacao ac">
                     <div class="card-image-box">
-                        <img src="card-image-placeholder.jpg" alt="Capa da Publicação"> 
+                        <img src="../../imagens/3.0 Publicações/Figura_AC3_PS.png" alt="Capa da Publicação">
                     </div>
-                    <p class="card-title">Burned Area Map of goias state using Sentinel-2/Landsat-8.</p>
+                    <p class="card-title">Rumo a Estimativa Objetivas de Safras Agrícolas.</p>
                     <div class="card-links">
-                        <a href="#" class="btn-card doi">SBSR</a>
+                        <a href="https://proceedings.science/sbsr/sbsr-2023/trabalhos/rumo-a-estimativa-objetivas-de-safras-agricolas?lang=pt-br"
+                            class="btn-card doi">SBSR</a>
                         <a href="#" class="btn-card pdf">PDF</a>
                     </div>
                 </div>
-                
+
                 <div class="publication-card conference-card publicacao ac">
                     <div class="card-image-box">
-                        <img src="card-image-placeholder.jpg" alt="Capa da Publicação"> 
+                        <img src="../../imagens/3.0 Publicações/Figura_AC4_PS.png" alt="Capa da Publicação">
                     </div>
-                    <p class="card-title">Avaliação do desempenho de diferentes modelos de classificação de áreas de cultivo usando séries temporais de imagens Sentinel-2.</p>
+                    <p class="card-title">Exploring agricultural classes from available land use and land cover maps .
+                    </p>
                     <div class="card-links">
-                        <a href="#" class="btn-card doi">SBSR</a>
+                        <a href="https://proceedings.science/sbsr-2025/papers/exploring-agricultural-classes-from-available-land-use-and-land-cover-maps?lang=pt-br"
+                            class="btn-card doi">SBSR</a>
                         <a href="#" class="btn-card pdf">PDF</a>
                     </div>
                 </div>
-                
+
                 <div class="publication-card conference-card publicacao ac">
                     <div class="card-image-box">
-                        <img src="card-image-placeholder.jpg" alt="Capa da Publicação"> 
+                        <img src="../../imagens/3.0 Publicações/Figura_AC5_PS.png" alt="Capa da Publicação">
                     </div>
-                    <p class="card-title">Avaliação do desempenho e treinamento de classificadores para identificação de classes agropecuárias.</p>
+                    <p class="card-title">Evaluating dissimilarities among available land use and land cover mapping
+                        initiatives: emphasis on agricultural classes .</p>
                     <div class="card-links">
-                        <a href="#" class="btn-card doi">SBSR</a>
+                        <a href="https://proceedings.science/sbsr-2025/papers/evaluating-dissimilarities-among-available-land-use-and-land-cover-mapping-initi?lang=pt-br"
+                            class="btn-card doi">SBSR</a>
                         <a href="#" class="btn-card pdf">PDF</a>
                     </div>
                 </div>
@@ -254,11 +276,12 @@
         <div class="footer-right">
             <h4>Nossa Localização</h4>
             <div class="map-placeholder">
-                </div>
+            </div>
         </div>
     </footer>
-    
+
     <script src="script.js"></script>
 
 </body>
+
 </html>

@@ -89,6 +89,7 @@ ul li {
     border: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: filter 0.3s;
+    
 }
 
 .junte-time .btn:hover {
@@ -142,21 +143,19 @@ main.container-membros {
     color: var(--cor-texto-escuro);
     padding-bottom: 5px;
     margin-bottom: 20px;
-    margin-top: 40px;  /* Aumenta o espaço de cima */
-    text-align: center; /* Centraliza */
-
-    /* Remove linhas (como falamos antes) */
+    margin-top: 40px;  
+    text-align: left; 
     text-decoration: none;
     border-bottom: none; 
 }
 
-/* Centraliza o parágrafo que vem logo depois do título */
+
 #titulo-membros + p {
-    text-align: center;
-    max-width: 600px; /* Limita a largura do texto */
-    margin-left: auto;  /* Centraliza o bloco do parágrafo */
-    margin-right: auto; /* Centraliza o bloco do parágrafo */
-    margin-bottom: 40px; /* Dá espaço antes de "Coordenador" */
+    text-align: left;
+    max-width: 600px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-bottom: 40px; 
 
 }
 
@@ -174,7 +173,7 @@ h2 {
     border-bottom: 1px solid var(--cor-verde-principal);
     margin-bottom: 20px;
     margin-top: 20px;
-        text-align: center; 
+        text-align: left; 
 }
 
 .grade-membros {
@@ -222,7 +221,7 @@ h2 {
 
 .nome-membro-banner {
     position: relative;
-    z-index: 2;
+    z-index: 4;
     width: 100%;
     height: 55px;
     background-color: var(--cor-azul-verso);
@@ -261,7 +260,7 @@ h2 {
 }
 
 .card-verso p {
-    font-size: 0.9em;
+    font-size: 0.8em;
     margin: 0;
 }
 
@@ -277,7 +276,7 @@ h2 {
 
 .lattes-link {
     position: absolute;
-    bottom: 20px;
+    bottom: 5px;
     right: 20px;
     display: flex;
     flex-direction: column;
@@ -469,13 +468,13 @@ h2 {
 
     .grade-membros {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 
     .card-membro {
         width: 100%;
-        height: 350px;
+        height: 250px;
         position: relative;
         overflow: hidden;
         border-radius: 10px;
@@ -487,7 +486,7 @@ h2 {
         position: absolute;
         width: 100%;
         height: 100%;
-        border-radius: 10px;
+        border-radius: 5px;
         transition: opacity 0.5s ease;
         box-sizing: border-box;
     }
@@ -528,19 +527,19 @@ h2 {
 
     .nome-membro-banner h3 {
         margin: 0;
-        font-size: 1.1em;
+        font-size: 0.8em;
         text-transform: uppercase;
     }
 
     .nome-membro-banner p {
         margin: 5px 0 0;
-        font-size: 0.8em;
+        font-size: 0.5em;
     }
 
     .card-verso {
         background-color: var(--cor-azul-verso);
         color: var(--cor-texto-claro);
-        padding: 20px;
+        padding: 5px;
         z-index: 1;
         opacity: 0;
         display: flex;
@@ -551,7 +550,7 @@ h2 {
     }
 
     .card-verso p {
-        font-size: 0.9em;
+        font-size: 0.6em;
         margin: 0;
     }
 
@@ -567,8 +566,8 @@ h2 {
 
     .lattes-link {
         position: absolute;
-        bottom: 20px;
-        right: 20px;
+        bottom: 0px;
+        right: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -587,7 +586,7 @@ h2 {
 
     .lattes-ver {
         color: var(--cor-amarelo-ver);
-        font-size: 12px;
+        font-size: 6px;
         font-weight: 600;
     }
 
@@ -599,12 +598,12 @@ h2 {
     }
 
     .lattes-curriculo {
-        font-size: 10px;
+        font-size: 5px;
         font-weight: 500;
     }
 
     .lattes-lattes {
-        font-size: 13px;
+        font-size: 6.5px;
         font-weight: 900;
     }
 
