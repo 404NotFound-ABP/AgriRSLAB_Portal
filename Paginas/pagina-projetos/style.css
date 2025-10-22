@@ -20,25 +20,25 @@
     --cor-sombra: rgba(0, 0, 0, 0.3);
     /* Sombra suave */
 
-    --fonteTitulo: 
+    --fonteTitulo:
 }
 
-body {
+.body1 {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
     background-color: var(--fundo);
-    /* Fundo leve para destacar o card */
 }
 
-.container-projetos{
+.container-projetos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 30px;
-    gap: 30px; /* Adiciona um espaço de 30px entre os cards */
+    gap: 30px;
+    /* Adiciona um espaço de 30px entre os cards */
 }
 
 .card-projeto {
@@ -55,18 +55,24 @@ body {
 /* Estilo para a imagem */
 .card-imagem {
     padding: 15px;
+    height: 200px;
+    /* Define uma altura fixa para a área da imagem */
+    display: flex;
+    /* Ajuda a centralizar a imagem se ela for menor */
+    align-items: center;
     /* Padding interno para a borda verde ao redor da imagem */
 }
 
 .card-imagem img {
     width: 100%;
-    height: auto;
     display: block;
     border-radius: 8px;
     border: 1.5px solid #000000;
     /* Borda arredondada na imagem interna */
     /* Garante que a imagem mantenha o aspecto visual do exemplo (cobertura total) */
     object-fit: cover;
+    height: 100%;
+    /* Faz a imagem ocupar a altura do contêiner .card-imagem */
 }
 
 /* Estilo para o conteúdo (título e resumo) */
@@ -79,7 +85,8 @@ body {
 
 .card-titulo {
     font-size: 1.25rem;
-    font-family: 'Montserrat', sans-serif; /* Adicionado do HTML */
+    font-family: 'Montserrat', sans-serif;
+    /* Adicionado do HTML */
     /* Tamanho do título */
     font-weight: bold;
     margin-top: 0;
@@ -89,7 +96,8 @@ body {
 
 .card-resumo {
     font-size: 0.95rem;
-    font-family: 'Libre Baskerville', serif; /* Adicionado do HTML */
+    font-family: 'Merriweather', serif;
+    /* Adicionado do HTML */
     /* Tamanho do resumo */
     margin-bottom: 25px;
     line-height: 1.5;
@@ -126,4 +134,103 @@ body {
     background-color: var(--vdEscuro);
     /* Um tom um pouco mais claro no hover */
     color: var(--vdClarinho);
+}
+
+
+/* pagina de cada projeto */
+
+/* Estilos CSS */
+.detalhes_projetos {
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--fundo);
+}
+
+/* O CONTAINER OCUPA A LARGURA TOTAL SEM LIMITES */
+.container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos de conteúdo interno: aplicamos um padding horizontal (à esquerda e à direita)
+   para o texto não "colar" nas bordas da tela. */
+.header-top,
+h1,
+.integrantes,
+.objetivo-pesquisa {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+/* Estilo para o ícone de seta (simulado com texto) */
+.header-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-top: 40px;
+}
+
+.back-arrow {
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000000;
+}
+
+/* Título Principal */
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Informações dos Integrantes */
+.integrantes {
+    font-size: 25px;
+    color: #555;
+    margin-bottom: 30px;
+    padding-left: 45px;
+    text-align: center;
+    /* Leve recuo para alinhar com o texto abaixo */
+}
+
+/* Parágrafo de Objetivo da Pesquisa */
+.objetivo-pesquisa {
+    font-size: 30px;
+    line-height: 1.8;
+    text-align: justify;
+    color: #333;
+}
+
+/* Destaque das palavras sublinhadas */
+.objetivo-pesquisa u {
+    text-decoration: underline;
+    text-decoration-color: #000000;
+    text-decoration-thickness: 1px;
+}
+
+/* Bloco do Diagrama/Fluxograma - OCUPA A LARGURA TOTAL */
+.diagrama-bloco {
+    margin-top: 40px;
+    padding: 0;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.diagrama-img {
+    max-width: 100%;
+    /* Garante que a imagem não ultrapasse a largura da tela */
+    height: auto;
+    display: block;
+    margin: 0;
+    border-radius: 8px;
+    border: 1.5px solid #000000;
 }

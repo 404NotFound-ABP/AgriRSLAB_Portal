@@ -1,0 +1,619 @@
+/* ================================= 
+   CONFIGURAÇÕES GERAIS 
+==================================== */
+:root {
+    --cor-verde-principal: #55A357;
+    --cor-verde-principal-escuro: #36794E;
+    --cor-fundo-footer: #604639;
+    --cor-fundo-branco: #F8F9Fa;
+    --cor-texto-claro: #f0f2f5;
+    --cor-azul-verso: #0F5289;
+    --cor-amarelo-ver: #D3D840;
+    --cor-azul-2: #487DB4;
+    --cor-verde-claro: #E0F9D5;
+    --cor-texto-escuro: #333;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cor-fundo-branco);
+    color: var(--cor-texto-escuro);
+}
+
+/*    HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--cor-verde-principal-escuro);
+    border-bottom: 1px groove var(--cor-texto-claro);
+}
+
+.header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    display: inline;
+    margin-right: 20px;
+    /* espaçamento entre os itens */
+    list-style: none;
+    gap: 20px;
+
+}
+
+.logo {
+    height: 50px;
+}
+
+.header nav a {
+    margin: 15 15px;
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    font-weight: normal;
+}
+
+/*    BANNER "JUNTE-SE AO TIME" */
+.junte-time {
+    background-color: var(--cor-verde-claro);
+    color: var(--cor-texto-escuro);
+    padding: 30px 0;
+    text-align: left;
+}
+
+.junte-time h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 0;
+    color: var(--cor-texto-escuro);
+}
+
+.junte-time h3 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.junte-time .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: var(--cor-verde-principal);
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: filter 0.3s;
+}
+
+.junte-time .btn:hover {
+    filter: brightness(0.9);
+}
+
+/* CONTEÚDO PRINCIPAL E CARDS*/
+.container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 60px;
+    box-sizing: border-box;
+}
+
+.container-membros {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 60px;
+    box-sizing: border-box;
+}
+
+main.container {
+    padding-top: 40px;
+}
+
+main.container-membros {
+    padding-top: 40px;
+}
+
+.container-membros h3 {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 40px;
+    color: var(--cor-texto-escuro);
+}
+
+#titulo-equipe  {
+    font-size: 1.5em;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 10px;
+    margin-top: 10px;  
+}
+
+/* ESTILO PARA O TEXTO DE APRESENTAÇÃO */
+/* Centraliza o título e dá mais espaço de cima */
+#titulo-membros {
+    font-size: 1.5em;
+    color: var(--cor-texto-escuro);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    margin-top: 40px;  /* Aumenta o espaço de cima */
+    text-align: center; /* Centraliza */
+
+    /* Remove linhas (como falamos antes) */
+    text-decoration: none;
+    border-bottom: none; 
+}
+
+/* Centraliza o parágrafo que vem logo depois do título */
+#titulo-membros + p {
+    text-align: center;
+    max-width: 600px; /* Limita a largura do texto */
+    margin-left: auto;  /* Centraliza o bloco do parágrafo */
+    margin-right: auto; /* Centraliza o bloco do parágrafo */
+    margin-bottom: 40px; /* Dá espaço antes de "Coordenador" */
+
+}
+
+#subtitulo-membros {
+    font-size: 1.2em;
+    color: var(--cor-texto-escuro);
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: var(--cor-texto-escuro);
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--cor-verde-principal);
+    margin-bottom: 20px;
+    margin-top: 20px;
+        text-align: center; 
+}
+
+.grade-membros {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.card-membro {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(191, 30, 30, 0.15);
+}
+
+.card-frente,
+.card-verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: opacity 0.5s ease;
+    box-sizing: border-box;
+}
+
+.card-frente {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 15px;
+    z-index: 2;
+}
+
+.card-frente img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.nome-membro-banner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 55px;
+    background-color: var(--cor-azul-verso);
+    color: var(--cor-texto-claro);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px groove var(--cor-azul-2);
+}
+
+.nome-membro-banner h3 {
+    margin: 0;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.nome-membro-banner p {
+    margin: 5px 0 0;
+    font-size: 0.8em;
+}
+
+.card-verso {
+    background-color: var(--cor-azul-verso);
+    color: var(--cor-texto-claro);
+    padding: 20px;
+    z-index: 1;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-verso p {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.card-membro:hover .card-frente {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card-membro:hover .card-verso {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lattes-link {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.lattes-link:hover {
+    transform: scale(1.05);
+}
+
+.lattes-link span {
+    line-height: normal;
+}
+
+.lattes-ver {
+    color: var(--cor-amarelo-ver);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.lattes-curriculo,
+.lattes-lattes {
+    color: var(--cor-texto-claro);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.lattes-curriculo {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.lattes-lattes {
+    font-size: 13px;
+    font-weight: 900;
+}
+
+/* FOOTER */
+.footer {
+    background-color: var(--cor-fundo-footer);
+    color: var(--cor-texto-claro);
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* ================================= 
+   ESTILOS PARA DISPOSITIVOS MÓVEIS
+ ================================= 
+   CONFIGURAÇÕES GERAIS 
+==================================== */
+
+@media (max-width: 768px) {
+    :root {
+        --cor-verde-principal: #55A357;
+        --cor-fundo-footer: #604639;
+        --cor-fundo-branco: #F8F9Fa;
+        --cor-texto-claro: #f0f2f5;
+        --cor-azul-verso: #0F5289;
+        --cor-amarelo-ver: #D3D840;
+        --cor-azul-2: #487DB4;
+        --cor-verde-claro: #E0F9D5;
+        --cor-texto-escuro: #333;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--cor-fundo-branco);
+        color: var(--cor-texto-escuro);
+    }
+
+    /*    HEADER */
+    .menu ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu li {
+        position: relative;
+        cursor: pointer;
+    }
+
+    /* Submenu escondido por padrão */
+    .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #333;
+        color: white;
+        list-style: none;
+        padding: 10px 0;
+        min-width: 120px;
+    }
+
+    .submenu li {
+        padding: 5px 15px;
+    }
+
+    /* Mostrar submenu ao passar o mouse */
+    .dropdown:hover .submenu {
+        display: block;
+    }
+
+
+    /*    BANNER "JUNTE-SE AO TIME" */
+    .junte-time {
+        background-color: var(--cor-verde-claro);
+        color: var(--cor-texto-escuro);
+        padding: 30px 0;
+        text-align: left;
+    }
+
+    .junte-time h2 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 0;
+        color: var(--cor-texto-escuro);
+
+    }
+
+    .junte-time h3 {
+        font-size: 16px;
+        font-weight: 150;
+    }
+
+    .junte-time .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 24px;
+        background-color: var(--cor-verde-principal);
+        color: var(--cor-texto-claro);
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: filter 0.3s;
+    }
+
+    .junte-time .btn:hover {
+        background: var(--cor-verde-principal);
+    }
+
+    .btn-primary-vagas:active {
+        transform: translateY(3px);
+        box-shadow: 0 1px 0 var(--cor-verde-principal);
+    }
+
+
+
+
+    /* CONTEÚDO PRINCIPAL E CARDS*/
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    main.container {
+        padding-top: 40px;
+    }
+
+    /* ESTILO PARA O TEXTO DE APRESENTAÇÃO */
+#titulo-membros {
+    font-size: 1.5em;
+    color: var(--cor-texto-escuro);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-bottom: none;
+}
+
+    h2 {
+        font-size: 1.3em;
+        color: var(--cor-texto-escuro);
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--cor-verde-principal);
+        margin-bottom: 30px;
+        margin-top: 40px;
+    }
+
+    .grade-membros {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 30px;
+    }
+
+    .card-membro {
+        width: 100%;
+        height: 350px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-frente,
+    .card-verso {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: opacity 0.5s ease;
+        box-sizing: border-box;
+    }
+
+    .card-frente {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 15px;
+        z-index: 2;
+    }
+
+    .card-frente img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .nome-membro-banner {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 55px;
+        background-color: var(--cor-azul-verso);
+        color: var(--cor-texto-claro);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-bottom: 1px groove var(--cor-azul-2);
+    }
+
+    .nome-membro-banner h3 {
+        margin: 0;
+        font-size: 1.1em;
+        text-transform: uppercase;
+    }
+
+    .nome-membro-banner p {
+        margin: 5px 0 0;
+        font-size: 0.8em;
+    }
+
+    .card-verso {
+        background-color: var(--cor-azul-verso);
+        color: var(--cor-texto-claro);
+        padding: 20px;
+        z-index: 1;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .card-verso p {
+        font-size: 0.9em;
+        margin: 0;
+    }
+
+    .card-membro:hover .card-frente {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .card-membro:hover .card-verso {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .lattes-link {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+    }
+
+    .lattes-link:hover {
+        transform: scale(1.05);
+    }
+
+    .lattes-link span {
+        line-height: normal;
+    }
+
+    .lattes-ver {
+        color: var(--cor-amarelo-ver);
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .lattes-curriculo,
+    .lattes-lattes {
+        color: var(--cor-texto-claro);
+        text-transform: uppercase;
+        line-height: 1;
+    }
+
+    .lattes-curriculo {
+        font-size: 10px;
+        font-weight: 500;
+    }
+
+    .lattes-lattes {
+        font-size: 13px;
+        font-weight: 900;
+    }
+
+    /* FOOTER */
+    .footer {
+        background-color: var(--cor-fundo-footer);
+        color: var(--cor-texto-claro);
+        padding: 20px;
+        margin-top: 20px;
+        text-align: center;
+    }
+}

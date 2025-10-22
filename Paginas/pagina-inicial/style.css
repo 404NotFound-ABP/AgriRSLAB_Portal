@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 /* VARIÁVEIS CSS */
 :root {
     --cor-verde-primaria: #36794E;
     --cor-verde-secundaria: #55A357; 
+    --cor-verde-fundo:#e0f9d5;
     --cor-azul-primaria: #0F5289;
     --cor-azul-secundaria: #487DB4; 
     --cor-azul-terciaria: #DDF1FB;
@@ -13,7 +15,7 @@
     --cor-fonte:#252525;
 
     --fonte-principal: 'Roboto', sans-serif;
-    --fonte-titulos: 'Nunito', sans-serif;
+    --fonte-titulos: 'Libre Baskerville';
 }
 
 
@@ -27,12 +29,12 @@
 
 body {
     font-family: var(--fonte-principal);
-    color: var(--cor-texto-escuro);
+    color: var(--cor-fonte);
     line-height: 1.6;
 }
 
 h1, h2, h3 {
-    font-family: var(--fonte-titulos);
+    font-family: var(--fonte-principal);
     color: var(--cor-texto-escuro);
 }
 
@@ -126,54 +128,68 @@ a {
     margin-bottom: 5px;
 }
 
-.linha-divisoria{
-    background-color: var(--cor-verde-secundaria);
-    width: 848px;
-    height: 5px;
-    border-radius: 10px;
-    margin-bottom: 60px;
-}
 
 .areas-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Quatro colunas */
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    justify-content: center;
 }
 
 .area-card-fundo{
     background-color: var(--cor-azul-primaria);
-    width: 330px;
-    height: 400px;
     border-radius: 10px;
+    width: 350px;
+    height: 450px;
+    padding: 5px 7px 10px;
 }
 
 .area-card {
+    width: 350px;
+    height: 100%; 
+    display: flex;
+    flex-direction: column; 
     background-color: var(--cor-azul-terciaria);
-    color: var(--cor-texto-claro);
-    width: 330px;
-    height: 390px;
-    padding: 20px;
     border-radius: 10px;
-    margin-left: 10px;
-    margin-bottom: 20px;
-    /* Estilos para alinhar os 5 itens (o 4 e 5 ficam no centro) */
+    overflow: hidden;
+    padding: 15px;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    transform: translateX(0);
 }
 
-.areas-grid .area-card:nth-child(4) {
-    grid-column: 2 / span 1;
+.area-card:hover{
+    transform: translateY(-8px);
 }
-.areas-grid .area-card:nth-child(5) {
-    grid-column: 3 / span 1;
+
+.area-card p{
+    font-family: var(--fonte-principal);
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
 }
+
 
 
 /* ---------------------------------------------------- */
 /* 4. SEÇÃO PROJETOS EM DESTAQUE (FUNDO VERDE CLARO) */
 /* ---------------------------------------------------- */
 .section-projetos {
-    background-color: var(--cor-verde);
+    display: flex;
+    flex-direction: column;
+    height: 960px;
+    background-color: var(--cor-verde-fundo);
     padding: 50px 80px;
-    text-align: center;
+    position: relative;
+    /*text-align: center;*/
+}
+
+.linha-divisoria-projetos{
+    background-color: var(--cor-verde-secundaria);
+    width: 90%;
+    height: 5px;
+    border-radius: 10px;
+    margin-bottom: 60px;
 }
 
 .projetos-slogan{
@@ -184,29 +200,32 @@ a {
     text-align: start;
 }
 
-.projetos-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+.projeto-img{
+    width: 90%;
+    height: 600px;
+    background-color: var(--cor-verde-primaria);
+    margin: 15px;
+    margin-left: 50px;
+    border-radius: 10px;
 }
 
-.projeto-card {
-    width: 300px;
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: var(--sombra-leve);
-    border: 2px solid var(--cor-verde-escuro); /* Borda verde */
+.projeto-destaque-txt{
+  display: flex;
+  flex-direction: column;
+  margin-top: 300px;
+  margin-left: 20px;
 }
 
-.projeto-card .placeholder-img {
-    height: 150px;
-    background-color: #A3D8B4; /* Cor de placeholder do mockup */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    color: var(--cor-verde-escuro);
+.projeto-destaque-titulo{
+    font-family: var(--fonte-principal);
+    color: var(--cor-fundo);
+    font-size: 30px;
+}
+
+.projeto-destaque-p{
+    font-family: var(--fonte-principal);
+    font-size: 20px;
+    color: var(--cor-fundo);
 }
 
 .projeto-card-footer {
@@ -224,62 +243,129 @@ a {
     margin-top: 10px;
 }
 
+.acesso-projetos-bt{
+    background-color: var(--cor-verde-secundaria);
+    color: var(--cor-fundo);
+    font-family: var(--fonte-principal);
+    font-weight: 600;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    position: absolute;
+    bottom: 60px;
+    right: 160px;
+}
+
+.acesso-projetos-bt:active{
+    background-color: var(--cor-verde-primaria);
+    /*transform: translateY(5px);*/
+    transform: scale(0.90); /* Diminui o tamanho em 2% */
+}
+
 
 /* ---------------------------------------------------- */
 /* 5. SEÇÃO NOTÍCIAS (News) */
 /* ---------------------------------------------------- */
-.section-news {
+.noticia-section {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: start;
+    margin-bottom: 5px;
     padding: 50px 80px;
+    color: var(--cor-fonte);
 }
 
-.section-news h2 {
-    text-align: center;
-    margin-bottom: 40px;
+.linha-divisoria-noticia{
+    background-color: var(--cor-azul-primaria);
+    width: 90%;
+    height: 5px;
+    border-radius: 10px;
+    margin-bottom: 60px;
 }
 
-.news-layout {
+.noticia-layout {
     display: grid;
     grid-template-columns: 2fr 1fr; /* Coluna grande e coluna pequena */
-    gap: 30px;
+    gap: 5px;
 }
 
-.main-news-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
+.noticia-principal-texto{
+    font-family: var(--fonte-principal);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.noticia-principal-card {
+    border: 2px solid var(--cor-azul-primaria);
+    border-radius: 10px;
     overflow: hidden;
     display: flex;
     box-shadow: var(--sombra-leve);
+    width: 750px;
+    height: 700px;
 }
 
-.main-news-card .news-img {
-    width: 50%;
-    height: 300px;
-    background: url('https://via.placeholder.com/600x400/808080/FFFFFF?text=Imagem+Noticia') no-repeat center center/cover;
-}
-
-.main-news-content {
+.noticia-principal-content {
     padding: 20px;
-    width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
-.main-news-content h3 {
-     font-size: 20px;
+.noticia-principal-img{
+    height: 400px;
+    width: 100%;
+    background-color: var(--cor-azul-secundaria);
+    border-radius: 10px;
 }
 
-.side-news {
+.noticias-btn-fundo{
+    background-color: var(--cor-azul-primaria);
+    border-radius: 5px;
+    width: 148px;
+    height: 42px;
+    padding: 3px ;
+    margin-top: 20px;
+    margin-left: auto;    
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.noticias-btn{
+    background-color: var(--cor-azul-terciaria);
+    border-radius: 5px;
+    width: 147px;
+    height: 110%;
+    font-family: var(--fonte-principal);
+    font-weight: 600;
+    color: var(--cor-azul-primaria);
+    border: none;
+}
+
+
+.noticias-secundarias {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.side-news-item {
-    padding: 15px;
-    border-radius: 6px;
-    background-color: #f5f5f5;
-    box-shadow: var(--sombra-leve);
+.noticias-secundarias-item {
+    background-color: var(--cor-azul-secundaria);
+    color: var(--cor-fundo);
+    padding: 10px;
+    border-radius: 10px;
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+.noticia-texto{
+    font-family: var(--fonte-principal);
+    font-size: 20px;
 }
 
 /* ---------------------------------------------------- */
@@ -320,4 +406,178 @@ a {
     text-align: center;
     line-height: 150px;
     font-size: 14px;
+}
+
+
+/* ---------------------------------------------------- */
+/* MEDIA QUERIES PARA DISPOSITIVOS MÓVEIS (MAX-WIDTH: 768PX) */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+
+    /* 1. VARIÁVEIS (Ajuste opcional) */
+    :root {
+        /* Se quiser ajustar tamanhos de fonte ou espaçamentos */
+        /* --padding-geral: 20px; */
+    }
+
+    /* 2. ESTILOS GERAIS */
+    .section-areas, 
+    .section-projetos, 
+    .noticia-section, 
+    .footer {
+        /* Diminui o padding geral das seções em telas pequenas */
+        padding: 30px 20px;
+    }
+
+
+    /* 3. CABEÇALHO E NAVEGAÇÃO */
+    .header {
+        /* Muda para layout de coluna e centraliza itens */
+        flex-direction: column;
+        align-items: flex-start; /* Alinha o logo à esquerda */
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        /* Esconde a navegação principal (pode ser revelada com JS/botão menu) */
+        /* Ou mantém visível, mas em coluna */
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin: 10px 0;
+    }
+
+    .search-contact {
+        /* Coloca busca e contato em coluna */
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .search-contact input,
+    .contact-btn {
+        /* Faz os elementos de busca e botão ocuparem a largura total */
+        width: 100%; 
+    }
+
+    /* 4. HERO SECTION (ANÚNCIO) */
+    .anuncio {
+        height: 40vh; /* Diminui um pouco a altura */
+    }
+    
+    .anuncio h1 {
+        font-size: 32px; /* Reduz o tamanho da fonte do título */
+    }
+
+    .anuncio p {
+        font-size: 16px; /* Reduz o tamanho da fonte do parágrafo */
+        padding: 0 10px;
+    }
+
+    /* 5. SEÇÃO ÁREAS DE PESQUISA (CARDS AZUIS) */
+    .areas-grid {
+        /* A grid não precisa de muitas mudanças, pois os cards já se quebram com flex-wrap */
+        gap: 20px;
+    }
+
+    .area-card-fundo,
+    .area-card {
+        /* Limita a largura do card à largura total da tela - padding */
+        width: 100%; 
+        height: auto;
+        max-width: 350px; /* Mantém um limite para não ficar muito largo em telas maiores que 768px */
+    }
+
+    /* 6. SEÇÃO PROJETOS EM DESTAQUE (FUNDO VERDE CLARO) */
+    .section-projetos {
+        height: auto; /* Permite que a seção se ajuste ao conteúdo */
+    }
+
+    .linha-divisoria-projetos {
+        width: 100%; 
+        margin-bottom: 30px;
+    }
+
+    .projeto-img {
+        /* Permite que o container da imagem ocupe a largura total */
+        width: 100%; 
+        height: 300px; /* Altura menor para mobile */
+        margin: 15px 0 0 0; /* Remove margem lateral */
+    }
+
+    .projeto-destaque-txt {
+        /* Reposiciona o texto do projeto para o topo da imagem para melhor visualização */
+        margin-top: 50px;
+        margin-left: 10px;
+    }
+
+    .projeto-destaque-titulo {
+        font-size: 24px;
+    }
+
+    .projeto-destaque-p {
+        font-size: 16px;
+    }
+
+    .acesso-projetos-bt {
+        /* Reposiciona o botão de acesso */
+        position: static; /* Volta para o fluxo normal do layout */
+        width: 100%;
+        height: 45px;
+        margin-top: 30px; /* Adiciona espaçamento após o projeto */
+        right: auto;
+        bottom: auto;
+    }
+
+
+    /* 7. SEÇÃO NOTÍCIAS (News) */
+    .noticia-layout {
+        /* Altera o grid para uma única coluna */
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .noticia-principal-card {
+        /* Ocupa a largura total da tela */
+        width: 100%;
+        height: auto;
+        flex-direction: column; /* Se houver flexbox, empilha o conteúdo */
+    }
+
+    .noticia-principal-img {
+        height: 250px; /* Altura da imagem menor */
+    }
+
+    .noticia-principal-texto {
+        font-size: 20px;
+    }
+
+    .noticias-secundarias-item {
+        /* Ocupa a largura total e tem altura auto */
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+    
+    .noticia-texto {
+        font-size: 18px;
+    }
+
+    .noticias-btn-fundo {
+        /* Centraliza o botão de notícias */
+        margin: 20px auto 0 auto;
+    }
+
+
+    /* 8. FOOTER */
+    .footer {
+        /* Empilha as colunas do footer */
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-map .map-placeholder {
+        /* Largura total para o mapa */
+        width: 100%;
+    }
 }

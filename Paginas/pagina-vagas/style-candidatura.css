@@ -1,0 +1,198 @@
+
+:root{
+  --verde: #2d6a4f;
+  --verde-claro: #d8f3dc;
+  --verde-borda: #cfe9d7;
+  --cinza: #f8f9fa;
+  --cinza-borda: #e6e6e6;
+  --cinza-escuro: #3a3a3a;
+  --texto: #333;
+}
+
+
+*{ box-sizing:border-box }
+html,body{ height:100% }
+.body-canditadura{
+  margin:0;
+  font-family:"Montserrat", sans-serif;
+  background: #F8F9FA;
+  color: var(--texto);
+  line-height:1.5;
+}
+
+
+.container-canditadura{
+  width:100%;
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 60px;
+}
+
+
+.header-canditadura{
+  background: var(--verde);
+  color:#fff;
+}
+.header-inner-canditadura{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:24px; padding:15px 0;
+}
+
+.brand-canditadura{ display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none; }
+.brand-mark-canditadura{
+  width:46px; height:46px; border-radius:50%;
+  background:linear-gradient(145deg,#ffffff25,#00000020);
+  box-shadow:inset 0 0 0 2px #ffffff22;
+}
+.brand-text-canditadura{ font-weight:700; font-size:28px; }
+
+.search-canditadura{ display:flex; align-items:center; gap:8px; }
+.search-input-canditadura{
+  padding:6px 10px; border-radius:6px; border:1px solid #ffffff30;
+  background:#ffffff1a; color:#fff; outline:none;
+}
+.search-input-canditadura::placeholder{ color:#fff; opacity:.9 }
+.search-btn-canditadura{
+  border:0; width:36px; height:36px; border-radius:50%;
+  background:#ffffff22; color:#fff; cursor:pointer;
+}
+
+
+.nav-canditadura{ background: var(--verde); }
+.nav-inner-canditadura{ display:flex; gap:20px; padding:8px 0; flex-wrap:wrap; }
+.nav-link-canditadura{
+  color:#fff; text-decoration:none; padding:6px 0; border-bottom:2px solid transparent;
+}
+.nav-link-canditadura:hover{ border-bottom-color:#ffffff99; }
+.nav-link-active-canditadura{ border-bottom:2px solid #fff; }
+.contact-link-canditadura{ margin-left:auto; }
+
+
+.main-canditadura{ margin:20px 0; }
+
+
+.section-title-canditadura{
+  font-size:1.35rem;
+  font-weight:600;
+  margin:0 0 32px;
+  display:flex; align-items:center; gap:8px;
+  position:relative;
+}
+.section-title-canditadura::after{
+  content:"";
+  position:absolute; left:0; bottom:-8px;
+  height:3px; width:100%;
+  background:#55A357;
+  border-radius:2px;
+}
+
+
+.section-plain-canditadura{
+  background:transparent; border:0; box-shadow:none; padding:0; margin:0 0 22px;
+}
+.section-plain-canditadura .section-title-canditadura{ margin-top:6px; }
+
+
+.card-canditadura{
+  background:#fff;
+  border:1px solid var(--cinza-borda);
+  border-radius:12px;
+  padding:10px 28px 28px 28px;
+  box-shadow:0 3px 6px rgba(0,0,0,.08);
+  margin-bottom:22px;
+}
+
+
+.lead-canditadura{ margin:0 0 16px }
+.muted-canditadura{ opacity:.85 }
+.mini-title-canditadura{ font-size:15px; margin:18px 0 8px; font-weight:600; color:#2a2a2a; }
+
+.ul-clean-canditadura{ margin:0; padding-left:20px }
+.ul-clean-canditadura li{ margin:6px 0 }
+
+.ul-dash-canditadura{ list-style:none; margin:0; padding:0 }
+.ul-dash-canditadura li{ position:relative; padding-left:20px; margin:6px 0 }
+.ul-dash-canditadura li::before{ content:"–"; position:absolute; left:0; top:0; color:#2c2c2c }
+
+
+.form-canditadura{
+  display:grid; grid-template-columns:1fr; gap:14px;
+}
+.label-canditadura{
+  display:flex; flex-direction:column; gap:8px; font-weight:600; font-size:14px;
+}
+.input-canditadura,
+.textarea-canditadura{
+  width:100%;
+  background:#fff;
+  border:1px solid var(--cinza-borda);
+  border-radius:10px;
+  padding:12px;
+  font:inherit;
+  outline:none;
+}
+.input-canditadura:focus,
+.textarea-canditadura:focus{
+  border-color: var(--verde-borda);
+  box-shadow: 0 0 0 3px var(--verde-claro);
+}
+.file-canditadura::file-selector-button{
+  padding:8px 12px; border-radius:8px; border:1px solid var(--cinza-borda);
+  background:#f2f2f2; cursor:pointer; font:inherit;
+}
+.textarea-canditadura{ resize:vertical }
+
+.form-actions-canditadura{
+  display:flex; justify-content:flex-end; margin-top:6px;
+}
+
+
+.btn-canditadura{
+  display:inline-flex; align-items:center; gap:10px;
+  font-weight:600; border-radius:8px; padding:12px 24px;
+  border:1px solid transparent; cursor:pointer;
+  transition:transform .1s ease-in-out, box-shadow .2s ease, background-color .2s ease;
+  text-decoration:none;
+}
+.btn-primary-canditadura{
+  background:#55A357; color:#fff;
+  box-shadow:0 4px 0 #36794E;
+}
+.btn-primary-canditadura:hover{ background:#4b924d; }
+.btn-primary-canditadura:active{
+  transform:translateY(3px);
+  box-shadow:0 1px 0 #36794E;
+}
+
+
+.footer-canditadura{ background: var(--cinza-escuro); color:#fff; padding:40px 0; }
+.footer-grid-canditadura{
+  display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start;
+}
+.footer-title-canditadura{ margin:0 0 10px; font-size:18px; }
+.footer-link-canditadura{ color:#aaf0d1; text-decoration:underline; }
+.logo-badge-canditadura{ width:56px; height:56px; border-radius:50%; background:#ffffff1a; margin-bottom:12px; }
+.sp-16-canditadura{ height:16px }
+.social-canditadura .social-link-canditadura{
+  display:inline-flex; width:38px; height:38px; align-items:center; justify-content:center;
+  background:#ffffff22; border-radius:10px; margin-right:8px; text-decoration:none;
+}
+.map-canditadura{ margin-top:12px }
+.map-placeholder-canditadura{
+  height:220px; border-radius:12px; border:1px dashed #ffffff55;
+  background:#ffffff10; display:flex; align-items:center; justify-content:center; font-weight:600;
+}
+.copyright-canditadura{
+  margin-top:24px; font-size:12px; color:#e9e1dc; padding:10px 0;
+  background: #2e2e2e; /* leve contraste para a faixa do copyright */
+}
+
+
+@media (max-width: 920px){
+  .container-canditadura{ padding:0 24px }
+  .brand-text-canditadura{ font-size:24px }
+  .nav-inner-canditadura{ gap:16px }
+}
+@media (max-width: 640px){
+  .footer-grid-canditadura{ grid-template-columns:1fr; gap:22px }
+}

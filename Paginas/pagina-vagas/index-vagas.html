@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vagas - AgriRS</title>
+  <link rel="stylesheet" href="style-vagas.css">
+  <script src="javascript-vagas.js" defer> </script>
+</head>
+<body>
+
+  <header class="header-vagas">
+    <div class="container-vagas header-inner-vagas">
+      <div class="logo-vagas">
+        <img src="logo.png" alt="AgriRS Logo">
+        <h1>Vagas</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Página inicial</a></li>
+          <li><a href="#">Publicações</a></li>
+          <li><a href="#">Notícias</a></li>
+          <li><a href="#">Membros</a></li>
+          <li><a href="#">Projetos</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#" class="active-vagas">Vagas</a></li>
+          <li><a href="#">Fale Conosco</a></li>
+        </ul>
+      </nav>
+      <div class="search-vagas">
+        <input type="text" placeholder="Pesquisar">
+      </div>
+    </div>
+  </header>
+
+  <section class="banner-vagas">
+    <div class="container-vagas">
+      <p class="chamada-vagas">Chamadas de Mestrado e Doutorado variam conforme edital do PGSER</p>
+      <h2>Mestrado e Doutorado em Sensoriamento Remoto aplicado à Agricultura</h2>
+      <p>O AgriRS Lab pertence à Divisão de Sensoriamento Remoto do INPE e desenvolve pesquisa e desenvolvimento em geoinformática e sensoriamento remoto para agricultura...</p>
+      <button class="btn-vagas btn-primary-vagas" onclick="scrollToSection()"> Ver inscrições</button>
+    </div>
+  </section>
+
+  <main>
+    <section class="oportunidades-vagas">
+      <div class="container-vagas">
+        <h3 class="section-title-vagas">🌱 Oportunidades de Trabalho</h3>
+
+        <div class="cards-vagas">
+          <div class="card-vagas">
+            <h4>🔬 Pesquisador(a) em Sensoriamento Remoto</h4>
+            <p>Atuação em projetos de monitoramento agrícola utilizando imagens de satélite e técnicas de geoprocessamento.</p>
+
+            <h5>Requisitos:</h5>
+            <ul>
+              <li>Formação em Engenharia Agronômica, Geografia...</li>
+              <li>Conhecimento em QGIS, Python, Google Earth Engine</li>
+              <li>Experiência com dados de satélite (Sentinel, Landsat)</li>
+            </ul>
+
+            <h5>Benefícios:</h5>
+            <ul>
+              <li>Bolsa de pesquisa</li>
+              <li>Ambiente colaborativo</li>
+              <li>Flexibilidade de horário</li>
+            </ul>
+
+            <button class="btn-vagas btn-primary-vagas btn-sm-vagas">Candidatar-se</button>
+          </div>
+
+          <div class="card-vagas">
+            <h4>💻 Desenvolvedor(a) de Sistemas Geoespaciais</h4>
+            <p>Desenvolvimento de aplicações web para visualização e análise de dados espaciais.</p>
+
+            <h5>Requisitos:</h5>
+            <ul>
+              <li>Experiência com JavaScript, React, APIs REST</li>
+              <li>Conhecimento em PostGIS</li>
+              <li>Desejável experiência em Leaflet ou OpenLayers</li>
+            </ul>
+
+            <h5>Benefícios:</h5>
+            <ul>
+              <li>Contrato de colaboração técnica</li>
+              <li>Participação em projetos inovadores</li>
+              <li>Ambiente de pesquisa e desenvolvimento</li>
+            </ul>
+
+            <button class="btn-vagas btn-primary-vagas btn-sm-vagas">Candidatar-se</button>
+          </div>
+        </div>
+      </div>
+    </section>      
+
+    <section class="inscricoes-vagas" id="verMestrado">
+      <div class="container-vagas">
+        <h3 class="section-title-vagas">📄 Inscrições para Mestrado e Doutorado</h3>
+        <div class="card-vagas">
+          <p>As inscrições são centralizadas pelo Programa de Pós Graduação em Sensoriamento Remoto do INPE. 
+            Acesse o link para editais e orientações.</p>
+
+          <a class="btn-vagas btn-sm-vagas btn-primary-vagas" href="https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao" target="_blank">Abrir página de inscrições e editais do PGSER </a>
+
+          <p>Contato da secretaria do programa: 
+            <a href="mailto:posgraduacao@inpe.br">posgraduacao@inpe.br</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="linhas-vagas">
+      <div class="container-vagas">
+        <h3 class="section-title-vagas">📊 Linhas de pesquisa e temas</h3>
+
+        <div class="cards-grid-vagas">
+          <div class="card-vagas">
+            <h4>Agricultura de precisão</h4>
+            <p>Variabilidade espacial, sensores em campo e integração com dados de máquinas.</p>
+          </div>
+
+          <div class="card-vagas">
+            <h4>Imagens orbitais e aéreas</h4>
+            <p>Uso de satélites e VANTs para monitoramento de culturas e fenologia.</p>
+          </div>
+
+          <div class="card-vagas">
+            <h4>Processamento e modelagem</h4>
+            <p>Processamento de imagens, séries temporais e aprendizado de máquina aplicado ao agro.</p>
+          </div>
+        </div>
+
+        <div class="card-full-vagas">
+          <p>As linhas específicas do PGSER incluem áreas como sensoriamento remoto aplicado à agricultura,
+            processamento de imagens e geoprocessamento. Consulte a página do programa para a lista completa e atualizada.</p>
+        </div>
+      </div>
+    </section>
+
+<section class="comoingressar-vagas">
+  <div class="container-vagas">
+    <h3 class="section-title-vagas">📥 Como ingressar</h3>
+
+    <div class="cards-ingressar-vagas">
+
+      <div class="card-vagas">
+        <h4>1. Leia o edital do PGSER</h4>
+        <p>Verifique requisitos, cronograma e documentos.  
+          O PGSER do INPE publica os editais no site oficial.</p>
+      </div>
+
+      <div class="card-vagas">
+        <h4>2. Prepare a inscrição</h4>
+        <ul>
+          <li>Histórico e diploma ou declaração de concluinte</li>
+          <li>Currículo Lattes</li>
+          <li>Carta de motivação</li>
+          <li>Cartas de recomendação (quando exigido)</li>
+          <li>Anteprojeto conforme edital</li>
+        </ul>
+      </div>
+
+      <div class="card-vagas">
+        <h4>3. Submeta e acompanhe</h4>
+        <p>Envie pelo sistema indicado no edital e acompanhe entrevistas ou provas.  
+          Resultados são divulgados no site do PGSER.</p>
+      </div>
+
+    </div>
+
+    <div class="card-full-vagas" style="margin-top: 20px;">
+      <p>Mais detalhes sobre linhas, seleção e contatos estão na página do PGSER do INPE.</p>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="footer-vagas">
+    <div class="container-vagas footer-inner-vagas">
+      <div class="contato-vagas">
+        <h4>Entre em contato com a gente</h4>
+        <button class="btn-vagas btn-primary-vagas btn-pill-vagas btn-sm-vagas">Fale conosco</button>
+        <p>Email: <a href="mailto:agrirs@inpe.br">agrirs@inpe.br</a></p>
+        <p>Redes sociais: 🔗 LinkedIn | 📸 Instagram</p>
+      </div>
+      <div class="localizacao-vagas">
+        <h4>Nossa localização:</h4>
+        <p>Av dos Astronautas, 1758, São José dos Campos - SP</p>
+        <img src="mapa.png" alt="Mapa localização">
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
