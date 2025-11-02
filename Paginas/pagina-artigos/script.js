@@ -22,25 +22,23 @@ function getFullUrl(path) {
 function criarArtigoCard(artigo) {
     const card = document.createElement('div');
     // Mantém a estrutura de classes original da página de artigos
-    card.className = 'publication-card article-card publicacao artigos';
+    card.className = 'publication-card article-card publicacao';
 
     const imagemUrl = getFullUrl(artigo.url_imagem);
     const pdfUrl = getFullUrl(artigo.link_pdf);
 
     card.innerHTML = `
-        <div class="publication-card article-card publicacao artigos">
-            <div class="card-image-box">
-                <img src="${imagemUrl}" alt="Capa do Artigo: ${artigo.titulo}" onerror="this.src='https://via.placeholder.com/300x200?text=Sem+Imagem';">
-            </div>
-            <p class="card-title">${artigo.titulo}</p>
-            <div class="card-links">
-                <a href="${artigo.link_doi}" target="_blank" rel="noopener noreferrer" class="btn-card doi">
-                    DOI
-                </a>
-                <a href="${pdfUrl}" target="_blank" rel="noopener noreferrer" class="btn-card pdf">
-                    PDF
-                </a>
-            </div>
+        <div class="card-image-box">
+            <img src="${imagemUrl}" alt="Capa do Artigo: ${artigo.titulo}" onerror="this.src='https://via.placeholder.com/300x200?text=Sem+Imagem';">
+        </div>
+        <p class="card-title">${artigo.titulo}</p>
+        <div class="card-links">
+            <a href="${artigo.link_doi}" target="_blank" rel="noopener noreferrer" class="btn-card doi">
+                DOI
+            </a>
+            <a href="${pdfUrl}" target="_blank" rel="noopener noreferrer" class="btn-card pdf">
+                PDF
+            </a>
         </div>
     `;
     return card;
@@ -74,9 +72,17 @@ async function carregarArtigosPublicos() {
         });
 
         artigos.forEach(artigo => {
-            const containerDestino = containers[artigo.categoria_nome];
-            if (containerDestino) {
+            // Procura pela chave do container de forma insensível a maiúsculas/minúsculas
+            const nomeCategoria = artigo.categoria_nome;
+            const chaveContainer = Object.keys(containers).find(
+                key => key.toLowerCase() === nomeCategoria.toLowerCase()
+            );
+
+            if (chaveContainer) {
+                const containerDestino = containers[chaveContainer];
                 containerDestino.appendChild(criarArtigoCard(artigo));
+            } else {
+                console.warn(`Nenhum container encontrado para a categoria: "${nomeCategoria}"`);
             }
         });
 
