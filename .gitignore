@@ -1,1 +1,13 @@
 node_modules
+# 1. Ignora todos os arquivos .jpg, .jpeg, .png, .gif, .pdf DENTRO da pasta upload/
+# O prefixo '/upload/' garante que as regras se apliquem apenas à pasta 'upload' na raiz do projeto.
+/upload/*.jpg
+/upload/*.jpeg
+/upload/*.png
+/upload/*.gif
+/upload/*.pdf
+
+# 3. Adiciona uma exceção para a própria pasta 'upload' e o arquivo .gitkeep.
+# A exclamação (!) anula as regras de ignorar.
+# É uma convenção popular para garantir que a pasta seja versionada (com um arquivo placeholder).
+!/upload/.gitkeep
