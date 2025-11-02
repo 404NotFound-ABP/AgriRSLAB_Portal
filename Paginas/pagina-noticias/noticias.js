@@ -30,16 +30,19 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".filterCategorySelection, .filterYearSelection")
     .forEach(f => filtrosLinha.appendChild(f));
 
-  // === BOTÃO LIMPAR FILTRO ===
-  const btnLimpar = document.createElement("button");
-  btnLimpar.textContent = "Limpar filtro";
-  btnLimpar.classList.add("btn-limpar-filtro");
-  btnLimpar.style.display = "none";
+// === BOTÃO LIMPAR FILTRO ===
+const btnLimpar = document.createElement("button");
+btnLimpar.textContent = "Limpar filtro";
+btnLimpar.classList.add("btn-limpar-filtro");
+btnLimpar.style.display = "none";
 
-  const containerBtnLimpar = document.createElement("div");
-  containerBtnLimpar.classList.add("container-btn-limpar");
-  filtrosLinha.after(containerBtnLimpar);
-  containerBtnLimpar.appendChild(btnLimpar);
+const containerBtnLimpar = document.createElement("div");
+containerBtnLimpar.classList.add("container-btn-limpar");
+
+// Aqui muda: adiciona o botão DEPOIS da linha dos filtros
+filtrosLinha.after(containerBtnLimpar);
+containerBtnLimpar.appendChild(btnLimpar);
+
 
   // === CONFIGURAÇÕES ===
   const qtdInicio = 4;
