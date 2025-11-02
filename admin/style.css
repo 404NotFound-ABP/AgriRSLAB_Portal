@@ -1,0 +1,186 @@
+#container-artigos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilo do Card do Artigo */
+.artigo-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: calc(25% - 20px);
+    /* 3 cards por linha */
+    min-width: 300px;
+    overflow: hidden;
+}
+
+.artigo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    color: #0056b3;
+}
+
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Estilos de Botões */
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btnCadastro {
+    margin: 5px 0 0 5px;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Estilos do Modal */
+.modal {
+    display: none;
+    /* Escondido por padrão */
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fundo escuro transparente */
+    /* Usando Flexbox para centralizar o modal na tela */
+    align-items: center;
+    /* Alinha verticalmente */
+    justify-content: center;
+    /* Alinha horizontalmente */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 0;
+    /* A centralização é controlada pelo pai (.modal) */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo para Formulários dentro do Modal */
+.modal-content label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.urlUpload {
+    font-size: 13px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="url"],
+.modal-content input[type="number"],
+.modal-content input[type="file"],
+.modal-content select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content button {
+    margin-top: 15px;
+}
+
+/* Adicionado para corrigir o alinhamento da imagem de preview */
+.image-preview-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.image-preview-container img {
+    display: inline-block; /* Sobrescreve o 'display: block' global */
+}
+
+/* Estilos para a Notificação Customizada (Toast) */
+#custom-toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 20; /* Acima dos modais */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, bottom 0.3s;
+}
+
+#custom-toast.show {
+    opacity: 1;
+    visibility: visible;
+    bottom: 30px;
+}
+
+.success { background-color: #28a745; } /* Verde para sucesso */
+.error { background-color: #dc3545; }   /* Vermelho para erro */
