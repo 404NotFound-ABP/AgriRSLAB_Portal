@@ -12,7 +12,10 @@ const uploadDir = path.resolve(__dirname, '..', 'upload');
 // [C]RIAR Artigo (POST)
 async function criarArtigo(req, res) {
     // Dados de texto enviados no corpo da requisição (body)
-    const { titulo, link_doi, id_categoria, url_imagem, link_pdf: linkPdfUrl } = req.body;
+    let { titulo, link_doi, id_categoria, url_imagem, link_pdf: linkPdfUrl, exibir } = req.body;
+
+    // Converte 'on' (de um checkbox/switch) para true, e a ausência para false.
+    exibir = (exibir === 'on' || exibir === 'true' || exibir === true);
     
     // Dados dos arquivos de upload (se houver)
     const imagemFile = req.files['imagem'] ? req.files['imagem'][0] : null;
@@ -30,11 +33,11 @@ async function criarArtigo(req, res) {
     }
 
     const query = `
-        INSERT INTO artigos (titulo, link_doi, link_pdf, url_imagem, id_categoria)
-        VALUES ($1, $2, $3, $4, $5)
+        INSERT INTO artigos (titulo, link_doi, link_pdf, url_imagem, id_categoria, exibir)
+        VALUES ($1, $2, $3, $4, $5, $6)
         RETURNING *;
     `;
-    const values = [titulo, link_doi, final_link_pdf, final_url_imagem, id_categoria];
+    const values = [titulo, link_doi, final_link_pdf, final_url_imagem, id_categoria, exibir];
 
     try {
         const resultado = await pool.query(query, values);
@@ -50,7 +53,7 @@ async function criarArtigo(req, res) {
 async function listarArtigos(req, res) {
     const query = `
         SELECT 
-            a.id, a.titulo, a.link_doi, a.link_pdf, a.url_imagem, a.data_cadastro,
+            a.id, a.titulo, a.link_doi, a.link_pdf, a.url_imagem, a.data_cadastro, a.exibir,
             c.nome AS categoria_nome
         FROM artigos a
         JOIN categoria_artigos c ON a.id_categoria = c.id
@@ -70,67 +73,103 @@ async function listarArtigos(req, res) {
 // [U]PDATE - Atualizar Artigo (PUT)
 async function atualizarArtigo(req, res) {
     const { id } = req.params;
-    const { titulo, link_doi, id_categoria, url_imagem_existente, link_pdf: linkPdfUrl } = req.body;
-
-    // Lógica para atualização de arquivos:
-    // 1. Pega os arquivos upados agora (se houver)
-    const imagemFile = req.files && req.files['imagem'] ? req.files['imagem'][0] : null;
-    const pdfFile = req.files && req.files['pdf'] ? req.files['pdf'][0] : null;
-    
-    // 2. Define os caminhos a serem salvos
-    const nova_url_imagem = imagemFile ? `/uploads/${imagemFile.filename}` : url_imagem_existente;
-    const novo_link_pdf = pdfFile ? `/uploads/${pdfFile.filename}` : linkPdfUrl; // Prioriza arquivo, depois URL, depois nada
-
-    // 3. Monta a query dinamicamente (para não sobrescrever campos vazios)
-    let setClauses = [];
-    let values = [];
-    let paramIndex = 1;
-
-    if (titulo) { setClauses.push(`titulo = $${paramIndex++}`); values.push(titulo); }
-    if (link_doi) { setClauses.push(`link_doi = $${paramIndex++}`); values.push(link_doi); }
-    if (id_categoria) { setClauses.push(`id_categoria = $${paramIndex++}`); values.push(id_categoria); }
-    if (nova_url_imagem) { setClauses.push(`url_imagem = $${paramIndex++}`); values.push(nova_url_imagem); }
-    
-    // Se novo PDF foi upado, atualiza e marca para deletar o antigo
-    let link_pdf_antigo = null; 
-    if (novo_link_pdf) { // Se um novo PDF (arquivo ou link) foi fornecido
-        setClauses.push(`link_pdf = $${paramIndex++}`); values.push(novo_link_pdf);
-        // Primeiro, busca o caminho antigo do PDF para deletar depois
-        const resAntigo = await pool.query('SELECT link_pdf FROM artigos WHERE id = $1', [id]);
-        if (resAntigo.rows.length > 0) {
-            link_pdf_antigo = resAntigo.rows[0].link_pdf;
-        }
-    }
-    
-    values.push(id); // O último valor é o ID
-
-    if (setClauses.length === 0) {
-        // Se não houver nada para atualizar, apenas retorna o artigo
-        const resArtigo = await pool.query('SELECT * FROM artigos WHERE id = $1', [id]);
-        return res.status(200).json(resArtigo.rows[0]);
-    }
-
-    const query = `
-        UPDATE artigos SET ${setClauses.join(', ')}
-        WHERE id = $${paramIndex}
-        RETURNING *;
-    `;
     
     try {
+        // 1. Busca o artigo existente para obter os caminhos de arquivo antigos
+        const resAntigo = await pool.query('SELECT link_pdf, url_imagem FROM artigos WHERE id = $1', [id]);
+        if (resAntigo.rows.length === 0) {
+            return res.status(404).json({ mensagem: 'Artigo não encontrado para atualização.' });
+        }
+        const artigoAntigo = resAntigo.rows[0];
+
+        // 2. Processa os dados recebidos
+        let { titulo, link_doi, id_categoria, url_imagem_existente, link_pdf, exibir } = req.body;
+        
+        // Converte 'on' (de um checkbox/switch) para true. 
+        // Se o campo não for enviado (checkbox desmarcado), o valor será false.
+        const exibirFinal = (exibir === 'on' || exibir === 'true' || exibir === true);
+        
+        // Garante que só consideramos um arquivo se ele realmente foi enviado (tem um nome)
+        const imagemFile = (req.files && req.files['imagem'] && req.files['imagem'][0].filename) ? req.files['imagem'][0] : null;
+        const pdfFile = (req.files && req.files['pdf'] && req.files['pdf'][0].filename) ? req.files['pdf'][0] : null;
+
+
+
+        // Define os novos caminhos/valores
+        // Define a nova URL da imagem apenas se um novo arquivo foi upado ou uma nova URL foi fornecida.
+        // Caso contrário, será `undefined` e não entrará na query de atualização, preservando o valor antigo.
+        const nova_url_imagem = imagemFile ? `/uploads/${imagemFile.filename}` : (req.body['edit-url_imagem_input'] || undefined);
+
+        // Define o novo link do PDF apenas se um novo arquivo foi upado ou uma nova URL foi fornecida.
+        // Caso contrário, será `undefined` e não entrará na query de atualização.
+        let novo_link_pdf;
+        if (pdfFile) {
+            // Prioridade 1: Um novo arquivo foi enviado.
+            novo_link_pdf = `/uploads/${pdfFile.filename}`;
+        } else if (link_pdf && link_pdf.trim() !== '') {
+            // Prioridade 2: O campo de texto foi preenchido com uma nova URL.
+            novo_link_pdf = link_pdf;
+        }
+        // Se nenhuma das condições acima for atendida (nenhum arquivo novo e campo de texto vazio),
+        // `novo_link_pdf` permanecerá `undefined`, e o valor no banco de dados será preservado.
+
+        // 3. Monta a query de atualização dinamicamente
+        let setClauses = [];
+        let values = [];
+        let paramIndex = 1;
+
+        if (titulo) { setClauses.push(`titulo = $${paramIndex++}`); values.push(titulo); }
+        if (link_doi) { setClauses.push(`link_doi = $${paramIndex++}`); values.push(link_doi); }
+        if (id_categoria) { setClauses.push(`id_categoria = $${paramIndex++}`); values.push(id_categoria); }
+        
+        // Apenas adiciona a cláusula de atualização da imagem se um novo valor foi realmente fornecido
+        if (nova_url_imagem !== undefined) { setClauses.push(`url_imagem = $${paramIndex++}`); values.push(nova_url_imagem); }
+        
+        // Apenas adiciona a cláusula de atualização do PDF se um novo valor foi realmente fornecido
+        if (novo_link_pdf !== undefined) {
+            setClauses.push(`link_pdf = $${paramIndex++}`); values.push(novo_link_pdf);
+        }
+        
+        // Sempre atualiza o campo 'exibir' com base no estado do switch (marcado ou não)
+        setClauses.push(`exibir = $${paramIndex++}`);
+        values.push(exibirFinal);
+
+        // Se não houver campos para atualizar, retorna sucesso sem fazer nada no banco
+        if (setClauses.length === 0) {
+            return res.status(200).json(artigoAntigo);
+        }
+
+        values.push(id); // Adiciona o ID como último parâmetro para a cláusula WHERE
+
+        const query = `
+            UPDATE artigos SET ${setClauses.join(', ')}
+            WHERE id = $${paramIndex}
+            RETURNING *;
+        `;
+
         const resultado = await pool.query(query, values);
 
         if (resultado.rowCount === 0) {
             return res.status(404).json({ mensagem: 'Artigo não encontrado.' });
         }
         
-        // Se um novo PDF foi upado (substituindo um arquivo antigo), deleta o arquivo antigo
-        if (link_pdf_antigo && link_pdf_antigo.startsWith('/uploads/')) {
-            const fullPathAntigo = path.join(uploadDir, link_pdf_antigo.replace('/uploads/', ''));
+        // 4. Deleta arquivos antigos do servidor se eles foram substituídos
+        // Deleta PDF antigo se um novo foi fornecido e o antigo era um upload
+        if (novo_link_pdf && artigoAntigo.link_pdf && artigoAntigo.link_pdf.startsWith('/uploads/')) {
+            const fullPathAntigo = path.join(uploadDir, artigoAntigo.link_pdf.replace('/uploads/', ''));
             if (fs.existsSync(fullPathAntigo)) {
                 fs.unlinkSync(fullPathAntigo);
             }
         }
-        
+
+        // Deleta imagem antiga se uma nova foi fornecida e a antiga era um upload
+        if (nova_url_imagem !== undefined && nova_url_imagem !== artigoAntigo.url_imagem && artigoAntigo.url_imagem && artigoAntigo.url_imagem.startsWith('/uploads/')) {
+            const fullPathAntigo = path.join(uploadDir, artigoAntigo.url_imagem.replace('/uploads/', ''));
+            if (fs.existsSync(fullPathAntigo)) {
+                fs.unlinkSync(fullPathAntigo);
+            }
+        }
+
         res.status(200).json(resultado.rows[0]);
     } catch (error) {
         console.error('Erro ao atualizar artigo:', error.message);
