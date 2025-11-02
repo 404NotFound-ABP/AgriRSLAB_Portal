@@ -117,7 +117,7 @@
 }
 
 .filter-toggle:hover {
-  background-color: #f8f8f8;
+  background-color: white;
   border-color: var(--verde-titulo);
 }
 
@@ -169,7 +169,7 @@
 
 .btn-apply-filter {
   width: 100%;
-  background-color: var(--verde-titulo);
+  background-color: var(--verde-escuro);
   color: var(--cor-texto-branco);
   border: none;
   padding: 8px 0;

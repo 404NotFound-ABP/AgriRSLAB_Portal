@@ -86,25 +86,27 @@
   display: block;
 }
 
+
+/* ============================================================
+   SEÇÃO — CARDS DE NOTÍCIAS
+   ============================================================ */
 .card-noticia {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 150px;
   background-color: #fff;
   border-radius: 10px;
-  display: flex;
-  padding: 10px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  padding: 10px 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
+  flex-shrink: 0;
 }
-
 .card-noticia:hover {
   transform: scale(1.02);
 }
-
-.card-noticia h3 {
-  font-size: 0.9rem;
-  color: var(--azul-escuro);
-}
-
 .card-noticia img {
   width: 90px;
   height: 90px;
@@ -112,12 +114,14 @@
   object-fit: cover;
   margin-right: 15px;
 }
-
+.card-noticia h3 {
+  font-size: 0.9rem;
+  color: var(--azul-escuro);
+}
 .card-noticia p {
   font-size: 0.8rem;
   margin: 4px 0;
 }
-
 .card-noticia span {
   font-size: 0.8rem;
   color: #555;
@@ -503,31 +507,80 @@
   font-weight: 700;
 }
 
+/* ============================================================
+   SEÇÃO — BOTÃO "VER MAIS"
+   ============================================================ */
 .ver-todas {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
   margin-top: 15px;
-  width: auto;              /* deixa o container só do tamanho do botão */
+  width: auto;
+}
+.btn-ver-mais {
+  background-color: var(--azul-claro);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-ver-mais:hover {
+  background-color: var(--azul-escuro);
+  transform: scale(1.03);
 }
 
+
 .ver-todas a {
-  display: inline-block;
   background-color: var(--azul-claro);
-  color: var(--texto-claro);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 20px;
+  color: #fff;
+  border: none;
   border-radius: 25px;
-  transition: background-color 0.3s, transform 0.2s;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .ver-todas a:hover {
-  background-color: var(--azul-clarinho1);
-  transform: scale(1);
-  color: var(--cor-texto-escuro);
+  background-color: var(--azul-escuro);
+  transform: scale(1.03);
+}
+
+/* ============================================================
+   SEÇÃO — TÍTULOS E MENSAGENS
+   ============================================================ */
+.titulo-mes {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--marrom);
+  margin: 25px 0 8px 10px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+.titulo-mes::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  height: 2px;
+  background-color: var(--verde-claro);
+  border-radius: 2px;
+}
+.mensagem-nenhum {
+  text-align: center;
+  color: #555;
+  font-size: 1.1rem;
+  margin: 40px 0;
+  font-weight: 500;
 }
 
 .yearSelection {
-  background-color: var(--azul-claro);
+  background-color: var(--azul-escuro);
   color:#fff;
   border: none;
   padding: 8px 12px;
@@ -541,6 +594,77 @@
   background-color: var(--cor-texto-claro);
   color: var(--cor-texto-escuro);
 }
+
+/* ============================================================
+   SEÇÃO — FILTROS SUPERIORES (CATEGORIA / ANO / LIMPAR)
+   ============================================================ */
+.filtros-superiores {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 10px 20px;
+  background: transparent;
+}
+.filtros-linha {
+  display: flex;
+  justify-content: flex-end;
+  align-items: self-start;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.yearSelection {
+  background-color: #fff;
+  color: var(--verde-escuro);
+  border: 1.5px solid var(--verde-claro);
+  border-radius: 25px;
+  padding: 9px 18px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.yearSelection:hover,
+.yearSelection:focus {
+  background-color: var(--verde-claro);
+  color: #fff;
+  border-color: var(--verde-claro);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: scale(1.02);
+}
+.yearSelection option {
+  background-color: #fff;
+  color: var(--verde-escuro);
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+.btn-limpar-filtro {
+  background-color: #fff;
+  color: var(--verde-escuro);
+  border: 1.5px solid var(--verde-claro);
+  border-radius: 25px;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.btn-limpar-filtro:not([style*="display: none"]) {
+  background-color: var(--verde-claro);
+  color: #fff;
+  border-color: var(--verde-claro);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.btn-limpar-filtro:hover {
+  background-color: var(--verde-escuro);
+  border-color: var(--verde-escuro);
+  color: #fff;
+  transform: scale(1.02);
+}
+
 
 @media (max-width: 768px) {
   .pagina-noticia {
@@ -566,5 +690,3 @@
     order: 1;
   }
 }
-
-
