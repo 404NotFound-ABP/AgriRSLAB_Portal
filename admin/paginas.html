@@ -47,11 +47,17 @@
                 </select>
 
                 <label>Imagem (URL ou Upload):</label>
-                <label class="urlUpload">URL:</label>
-                <input type="text" id="url_imagem_input" placeholder="Cole a URL da imagem">
-                <label class="urlUpload">Upload:</label>
-                <input type="file" id="imagem_file_input" name="imagem" accept="image/*">
-                
+                <div class="form-row">
+                    <div class="form-group-half">
+                        <label class="urlUpload">URL:</label>
+                        <input type="text" id="url_imagem_input" placeholder="Cole a URL da imagem">
+                    </div>
+                    <div class="form-group-half">
+                        <label class="urlUpload">Upload:</label>
+                        <input type="file" id="imagem_file_input" name="imagem" accept="image/*">
+                    </div>
+                </div>
+
                 <div class="image-preview-container">
                     <span>Imagem Atual:</span>
                     <img id="cadastro-img-preview" src="" alt="Preview da Imagem" style="max-width: 100px; display: none;">
@@ -61,10 +67,25 @@
                 <input type="url" id="link_doi" name="link_doi" required>
 
                 <label>PDF da Publicação (URL ou Upload):</label>
-                <label class="urlUpload">URL:</label>
-                <input type="url" id="link_pdf_input" name="link_pdf_input" placeholder="Cole a URL do PDF">
-                <label class="urlUpload">Upload:</label>
-                <input type="file" id="pdf_file_input" name="pdf" accept=".pdf">
+                <div class="form-row">
+                    <div class="form-group-half">
+                        <label class="urlUpload">URL:</label>
+                        <input type="url" id="link_pdf_input" name="link_pdf_input" placeholder="Cole a URL do PDF">
+                    </div>
+                    <div class="form-group-half">
+                        <input type="file" id="pdf_file_input" name="pdf" accept=".pdf">
+                    </div>
+                </div>
+
+                <!-- Interruptor para Exibir/Ocultar -->
+                <div class="form-group">
+                    <label for="exibir">Exibir Publicação na Página Pública?</label>
+                    <label class="switch">
+                        <input type="checkbox" id="exibir" name="exibir" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
                 <button type="submit" class="btn-primary">Cadastrar Publicação</button>
             </form>
         </div>
@@ -96,19 +117,40 @@
                 </div>
 
                 <label>Nova Imagem (URL ou Upload):</label>
-                <label class="urlUpload">URL:</label>
-                <input type="text" id="edit-url_imagem_input" placeholder="Cole a nova URL da imagem">
-                <label class="urlUpload">Upload:</label>
-                <input type="file" id="edit-imagem_file_input" name="imagem" accept="image/*">
+                <div class="form-row">
+                    <div class="form-group-half">
+                        <label class="urlUpload">URL:</label>
+                        <input type="text" id="edit-url_imagem_input" name="edit-url_imagem_input" placeholder="Cole a nova URL da imagem">
+                    </div>
+                    <div class="form-group-half">
+                        <label class="urlUpload">Upload:</label>
+                        <input type="file" id="edit-imagem_file_input" name="imagem" accept="image/*">
+                    </div>
+                </div>
 
                 <label for="edit-link_doi">Link DOI:</label>
                 <input type="url" id="edit-link_doi" name="link_doi" required>
 
                 <label>Novo PDF da Publicação (URL ou Upload):</label>
-                <label class="urlUpload">URL:</label>
-                <input type="url" id="edit-link_pdf_input" name="link_pdf_input" placeholder="Cole a nova URL do PDF">
-                <label class="urlUpload">Upload:</label>
-                <input type="file" id="edit-pdf_file_input" name="pdf" accept=".pdf">
+                <div class="form-row">
+                    <div class="form-group-half">
+                        <label class="urlUpload">URL:</label>
+                        <input type="url" id="edit-link_pdf_input" name="link_pdf" placeholder="Cole a nova URL do PDF">
+                    </div>
+                    <div class="form-group-half">
+                        <label class="urlUpload">Upload:</label>
+                        <input type="file" id="edit-pdf_file_input" name="pdf" accept=".pdf">
+                    </div>
+                </div>
+
+                <!-- Interruptor para Exibir/Ocultar -->
+                <div class="form-group">
+                    <label for="edit-exibir">Exibir Publicação na Página Pública?</label>
+                    <label class="switch">
+                        <input type="checkbox" id="edit-exibir" name="exibir">
+                        <span class="slider"></span>
+                    </label>
+                </div>
 
                 <button type="submit" class="btn-primary">Atualizar Publicação</button>
             </form>

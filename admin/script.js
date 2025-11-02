@@ -36,10 +36,14 @@ function getFullUrl(path) {
  */
 function criarArtigoCard(artigo) {
     const card = document.createElement('div');
-    card.className = 'artigo-card';
+    // Adiciona uma classe 'oculto' se o artigo não for para exibir
+    card.className = `artigo-card ${!artigo.exibir ? 'oculto' : ''}`;
     card.dataset.id = artigo.id; // Armazena o ID no elemento HTML
 
     const imagemUrl = getFullUrl(artigo.url_imagem);
+
+    // Texto para o status de visibilidade
+    const statusVisibilidade = artigo.exibir ? '<span class="status-visible">● Visível</span>' : '<span class="status-oculto">● Oculto</span>';
 
     // Formatação da data para exibição
     const dataFormatada = new Date(artigo.data_cadastro).toLocaleString('pt-BR', {
@@ -54,6 +58,7 @@ function criarArtigoCard(artigo) {
         <img src="${imagemUrl}" alt="Capa do Artigo: ${artigo.titulo}" onerror="this.src='https://via.placeholder.com/300x200?text=Sem+Imagem';">
         <div class="card-content">
             <h3>${artigo.titulo}</h3>
+            <p><strong>Status:</strong> ${statusVisibilidade}</p>
             <p><strong>Categoria:</strong> ${artigo.categoria_nome || 'N/A'}</p>
             <p><strong>Cadastrado em:</strong> ${dataFormatada}</p>
             
@@ -141,28 +146,42 @@ function abrirModalAtualizacao(event) {
     fecharModais();
     const artigoId = event.target.dataset.id;
     
-    // 1. Encontra o card (ou busque os dados na API se preferir 100% atualizado)
+    // 1. Encontra o card para obter os dados.
     const cardElement = document.querySelector(`.artigo-card[data-id='${artigoId}']`);
     const cardTitle = cardElement.querySelector('h3').textContent;
     
-    // 2. Preenche os campos do modal de Atualização (usando os valores do card como exemplo)
+    // 2. Preenche os campos do formulário de atualização.
     const form = document.getElementById('form-atualizacao');
     form.querySelector('#edit-id').value = artigoId;
     form.querySelector('#edit-titulo').value = cardTitle;
 
-    // A parte abaixo seria idealmente preenchida com uma requisição GET /api/artigos/:id
-    // Mas para simplificar, usaremos o que está no DOM:
+    // 3. Preenche a categoria correta no select.
+    const categoriaParagrafo = Array.from(cardElement.querySelectorAll('.card-content p')).find(p => p.textContent.includes('Categoria:'));
+    const categoriaNome = categoriaParagrafo ? categoriaParagrafo.textContent.replace('Categoria: ', '').trim() : '';
+    const selectCategoria = form.querySelector('#edit-id_categoria');
+    const optionToSelect = Array.from(selectCategoria.options).find(opt => opt.text === categoriaNome);
+    if (optionToSelect) {
+        selectCategoria.value = optionToSelect.value;
+    }
+
     const doiLink = cardElement.querySelector('a[href*="doi"]').href;
     const imgUrl = cardElement.querySelector('img').src;
+    const pdfLink = cardElement.querySelector('.btn-primary').href; // Pega o link do botão "Baixar PDF"
+    const isExibir = !cardElement.classList.contains('oculto'); // Verifica se o card está visível
     
     form.querySelector('#edit-link_doi').value = doiLink;
     form.querySelector('#edit-url_imagem_existente').value = imgUrl; // Guarda a URL existente
     form.querySelector('#edit-img-preview').src = imgUrl; // Exibe a imagem atual
     
-    // Limpa os inputs de arquivo e URL nova
+    // Preenche os campos de input com os links/caminhos atuais
+    // Se for um upload local, remove o 'http://localhost:3000' para mostrar apenas o caminho relativo
+    const displayImgUrl = imgUrl.startsWith('http://localhost:3000') ? imgUrl.replace('http://localhost:3000', '') : imgUrl;
+
+    // Limpa os campos de texto e de arquivo para uma nova atualização
     document.getElementById('edit-url_imagem_input').value = '';
     document.getElementById('edit-imagem_file_input').value = '';
     document.getElementById('edit-pdf_file_input').value = '';
+    document.getElementById('edit-exibir').checked = isExibir; // Marca o switch
     
     modalAtualizacao.style.display = 'flex'; // Alterado de 'block' para 'flex'
 }
@@ -279,13 +298,12 @@ formCadastro.addEventListener('submit', (e) => {
 
     if (pdfFileInput.files.length > 0) {
         // O arquivo já está no formData. Remove o campo de URL.
-        formData.delete('link_pdf_input');
+        formData.delete('link_pdf_input'); // Garante que o campo de texto seja ignorado
     } else if (linkPdfInput) {
         // Se há URL, a adiciona como um campo de texto 'link_pdf'
         formData.append('link_pdf', linkPdfInput);
         formData.delete('pdf'); // Remove o campo de arquivo vazio
-        formData.delete('link_pdf_input');
-    } else {
+    } else { // Se nem arquivo nem URL foram fornecidos
         showToast('Você deve fornecer uma URL de PDF OU fazer upload de um arquivo.', 'error');
         return;
     }
@@ -309,12 +327,12 @@ formAtualizacao.addEventListener('submit', (e) => {
     // Se um novo arquivo foi upado
     if (novaImagemFileInput.files.length > 0) {
         // O Multer no backend pegará este arquivo e salvará o novo caminho.
-        formData.delete('url_imagem_input'); 
+        formData.delete('edit-url_imagem_input'); 
     } 
     // Se uma nova URL foi digitada (e NÃO um arquivo upado)
     else if (novaUrlImagemInput) {
-        formData.append('url_imagem_existente', novaUrlImagemInput); // Sobrescreve a URL antiga
         formData.delete('imagem'); // Garante que o campo de arquivo vazio não seja enviado
+        // O campo 'edit-url_imagem_input' já está no formData, então não precisamos fazer nada.
     }
     // Caso contrário (nenhum dos dois foi preenchido), o valor original
     // (armazenado em 'url_imagem_existente' no input hidden) será enviado.
@@ -325,15 +343,12 @@ formAtualizacao.addEventListener('submit', (e) => {
     const novoPdfFileInput = document.getElementById('edit-pdf_file_input');
 
     if (novoPdfFileInput.files.length > 0) {
-        // Se um novo arquivo foi upado, ele já está no formData.
-        formData.delete('link_pdf_input');
-    } else if (novoLinkPdfInput) {
-        // Se uma nova URL foi digitada, envia como 'link_pdf'
-        formData.append('link_pdf', novoLinkPdfInput);
-        formData.delete('pdf'); // Garante que o campo de arquivo vazio não seja enviado
-        formData.delete('link_pdf_input');
+        // Se um novo arquivo de PDF foi enviado, removemos o campo de texto
+        // para que o backend priorize o arquivo.
+        formData.delete('link_pdf'); 
     }
-
+    // Se nenhum arquivo novo foi enviado, o campo 'link_pdf' (que já contém o valor
+    // existente) será enviado normalmente, e o backend saberá como preservá-lo.
     enviarFormularioComArquivos(formData, 'PUT', `${API_BASE_URL}/${id}`);
 });
 

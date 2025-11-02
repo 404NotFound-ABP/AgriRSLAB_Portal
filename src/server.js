@@ -1,11 +1,10 @@
-// src/server.js
-
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
 // Importação das routes
 const artigosRoutes = require('./routes/artigosRoutes');
+const publicArtigosRoutes = require('./routes/publicArtigosRoutes'); // Rota para a área pública
 // const categoriasRoutes = require('./routes/categoriasRoutes'); // Deixaremos simples por enquanto
 
 const app = express();
@@ -22,6 +21,7 @@ app.use('/uploads', express.static('src/upload')); // Agora 'http://localhost:30
 
 // routes da aplicação
 app.use('/api/artigos', artigosRoutes);
+app.use('/api/public-artigos', publicArtigosRoutes); // Endpoint para artigos públicos
 // app.use('/api/categorias', categoriasRoutes); // Descomente quando criar as categoriasRoutes
 
 // Inicialização do servidor
