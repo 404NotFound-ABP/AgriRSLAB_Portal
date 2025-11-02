@@ -13,7 +13,7 @@
   --azul-clarinho1: #DDF1FB;
   --azul-clarinho2: #BCE2F7;
   --azul-card: #d4e8f8;
-  
+
 
   --marrom: #604639;
   --fundo-branco: #F8F9FA;
@@ -197,7 +197,7 @@ MENU HAMBURGUER
   display: flex;
   align-items: center;
   width: 100%;
-  height: 15vh;
+  height: auto;
   min-height: 50px;
   margin: 0;
   padding: 0;
@@ -209,7 +209,7 @@ MENU HAMBURGUER
   aspect-ratio: 1 / 1;
   margin: auto 1.5vw auto 2.5vw;
   border-radius: 50%;
-  padding: 3px;
+  padding: 5px;
   flex-shrink: 0;
 }
 
@@ -322,24 +322,25 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 /* ======================================
    FOOTER
 ====================================== */
+
 .footerDad {
-  padding: 10px;
-  background-color: var(--marrom);
-  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: var(--marrom);
   color: var(--texto-claro);
-  gap: 10px;
+  padding: 20px;
 }
 
 .footerSection {
   position: relative;
   width: 45%;
-  padding: 0 15px;
+  padding: 15px 15px;
   display: flex;
   flex-direction: column;
   height: 100%;
+  line-height: 2;
 }
 
 .logoFooterSection {
@@ -362,7 +363,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
   max-height: 220px;
   width: 1.5px;
   position: absolute;
-  right: 0;
+  right: -10px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -408,6 +409,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 }
 
 #Map p {
+  font-size: small;
   margin: 0;
   text-align: left;
 }
@@ -437,15 +439,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 /* ======================================
     COPYRIGHT 
 ====================================== */
-.footerDad {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  background-color: var(--marrom);
-  color: var(--texto-claro);
-  padding: 30px 40px;
-}
+
 
 .footer-copy {
   width: 100%;
@@ -464,11 +458,11 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 @media (max-width: 768px) {
 
   main {
-  margin: 0 auto;
-  padding: 20px 10px;
-  /* reduz o espaço lateral e superior */
-  max-width: 100%;
-}
+    margin: 0 auto;
+    padding: 20px 10px;
+    /* reduz o espaço lateral e superior */
+    max-width: 100%;
+  }
 
   .titulo-secao {
     font-size: 1.2rem;
@@ -514,7 +508,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 
   /* HEADER */
   .headerTop {
-    height: 15vh;
+    height: auto;
     min-height: 60px;
     flex-wrap: wrap;
     padding: 5px 0;
@@ -531,14 +525,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 
 
 
-  .headerBottom {
-    height: auto;
-    padding: 8px 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
+
 
   .headerBottom::-webkit-scrollbar {
     display: none;
@@ -583,8 +570,9 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     width: 95%;
     align-items: center;
     padding: 0;
-    /* tira excesso interno */
+  line-height: 1.4;
   }
+
 
   .footerSection:first-child::after {
     display: none;
@@ -633,6 +621,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
   #Map p {
     margin: 0;
     text-align: center;
+    font-size: small;
   }
 
   .mapa-estilizado {
@@ -648,7 +637,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 MENU HAMBURGUER 
 ====================================== */
 
-.hamburguer {
+  .hamburguer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -677,8 +666,9 @@ MENU HAMBURGUER
     background-color: var(--verde-claro);
     position: absolute;
     top: 100%;
+    gap: 0;
     width: 220px;
-    padding: 20px 40px;
+    padding: 10px 40px;
     margin: 0;
     list-style: none;
     z-index: 2000;
@@ -688,6 +678,35 @@ MENU HAMBURGUER
   /* Mostra o menu quando clicado */
   .ulNav.active {
     display: flex !important;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Estilo dos links */
+  .ulNav.active li a {
+    color: var(--cor-texto-branco);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 0;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: color 0.3s ease, transform 0.1s ease;
+  }
+
+  .ulNav.active li a:hover {
+    color: var(--verde-clarinho);
+    transform: translateX(3px);
   }
 
   .item-direita {
@@ -715,13 +734,20 @@ MENU HAMBURGUER
   .headerBottom {
     overflow: visible;
     position: relative;
+    height: auto;
+    padding: 8px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    background-color: var(--verde-escuro) !important;
   }
 
-  
-.decorationHeaderMenu {
-  display: flex;
-  color: var(--cor-texto-branco);
-  font-size: 16px !important;
-  transition: 0.5s;
-}
+
+  .decorationHeaderMenu {
+    display: flex;
+    color: var(--cor-texto-branco);
+    font-size: 16px !important;
+    transition: 0.5s;
+  }
 }
