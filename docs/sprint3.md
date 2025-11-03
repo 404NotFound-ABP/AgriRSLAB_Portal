@@ -27,14 +27,21 @@
 
 
 
+## Tasks Sprint 3
+
+Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pendente e ✅ quando concluída.
 
 
+| ID      | Tarefa                     | Autor           | Data  | Pontuação | Disciplina | Requisitos Atendidos | Status |
+|---------|----------------------------|-----------------|-------|-----------|------------|---------------------|--------|
+|  | Sistema de login para área administrativa                   |           |       |           |            |                     |      |
+|  | Subir projeto                    |           |       |           |            |                      |      |
+|  | Modelagem do banco de dados                    |           |       |           |            |                     |      |
+|  | Layout e funcionalidades de todas as páginas                    |          |      |  |            |                     |      |  
+|  |                   |            |      |           |            |                     |      |
+|  |             |             |   |           |            |                     |      |
+|  |                     |             |  |           |            |                     |      |
+|  |              |   | |           |            |                     |      |
+|  |                  |             |  |          |            |                     |      |
 
 
-| ID      | Seção / Atividade                                   | Pontuação | Disciplina | Sprint |
-|---------|-----------------------------------------------------|-----------|------------|--------|
-|   | Inserir informações institucionais e links para redes sociais | 20        | DW         | 3 |
-|   | Sistema de login para área administrativa         | 40        | AL         | 3 |
-|  | Subir projeto                             | 13        | SO         | 3 |
-|   | Modelagem do banco de dados                         | 40        | MB         | 3 |
-|   | Layout e funcionalidades da área de administração | 20        | MB         | 3 |
