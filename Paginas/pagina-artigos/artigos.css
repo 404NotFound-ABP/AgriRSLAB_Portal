@@ -205,7 +205,7 @@
   background-color: var(--azul-clarinho1);
   border-radius: 9px;
   padding: 15px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px var(--azul-escuro);
   display: flex;
   flex-direction: column;
   text-align: center;
