@@ -216,13 +216,7 @@ MENU HAMBURGUER
 .h1HEADER {
   color: var(--cor-texto-branco);
   font-size: clamp(16px, 2.2vw, 22px);
-  white-space: normal;
-  /* permite quebra */
   flex: 1;
-}
-
-.pagina-noticias .h1HEADER::first-line {
-  font-size: 0.6em;
 }
 
 /* Barra de pesquisa */
@@ -322,134 +316,111 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 /* ======================================
    FOOTER
 ====================================== */
-
-.footerDad {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  background-color: var(--marrom);
-  color: var(--texto-claro);
-  padding: 20px;
+.rodape-agrirslab {
+  background-color: #604639;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  padding: 40px 60px 20px;
 }
 
-.footerSection {
-  position: relative;
-  width: 45%;
-  padding: 15px 15px;
+.container-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.coluna-esquerda,
+.coluna-direita {
+  flex: 1;
+  min-width: 280px;
+}
+
+.coluna-esquerda {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  line-height: 2;
 }
 
-.logoFooterSection {
-  flex: 1;
-  padding: 2px;
-}
-
-.imageLogoFooter {
-  max-width: 80px;
-  height: auto;
-  aspect-ratio: 1 / 1;
+.logo-rodape {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.footerSection:first-child::after {
-  content: '';
-  background-color: var(--fundo-branco);
-  height: 80%;
-  max-height: 220px;
-  width: 1.5px;
-  position: absolute;
-  right: -10px;
-  top: 50%;
-  transform: translateY(-50%);
+.titulo-rodape {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 10px;
 }
 
-.textFooter {
-  text-decoration: underline solid var(--verde-claro) 0.5px;
-  font-size: 18px;
-  margin-bottom: 10px;
+.texto-rodape {
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
-.emailLineFooter {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  gap: 10px;
+.botao-acesso {
+  background-color: #55A357;
+  color: #ffffff;
+  text-align: center;
+  padding: 8px 25px;
+  border-radius: 6px;
+  width: fit-content;
+  font-weight: 600;
+  box-shadow: -3px -3px 0 #36794E;
+  transition: background 0.3s ease;
 }
 
-.imagensFooter {
+.botao-acesso:hover {
+  background-color: #36794E;
+}
+
+.icones-redes {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 18px;
+  margin-top: 8px;
 }
 
-.imagensFooter a svg {
-  max-width: 40px;
+.icones-redes img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.icones-redes img:hover {
+  filter: invert(73%) sepia(31%) saturate(546%) hue-rotate(72deg) brightness(92%) contrast(90%);
+  transform: scale(1.1);
+}
+
+.divisoria-rodape {
+  width: 2px;
   height: auto;
+  background-color: rgba(255, 255, 255, 0.4);
+  align-self: stretch;
 }
 
-.mapa-estilizado {
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0px 5px 15px var(--sombra);
-  width: 90%;
-  height: 200px;
-}
-
-#Map {
+.coluna-direita {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 20px 0;
 }
 
-#Map p {
-  font-size: small;
-  margin: 0;
-  text-align: left;
-}
-
-.buttonFooter {
-  width: 180px;
-  background-color: var(--verde-claro);
-  border: none;
-  color: var(--cor-texto-branco);
-  padding: 10px 15px;
-  font-size: 1rem;
-  border-radius: 7px;
-  margin: 2px 2px;
-  box-shadow: -3px -3px 0 0 var(--verde-escuro);
-}
-
-#AdmAcess {
-  display: flex;
-  margin-top: 15px;
-  align-self: flex-end;
-  font-weight: 500;
-  font-size: 15px;
-  color: var(--cor-texto-branco);
-  text-decoration: none;
-}
-
-/* ======================================
-    COPYRIGHT 
-====================================== */
-
-
-.footer-copy {
+.mapa-rodape {
   width: 100%;
+  max-width: 500px;
+  height: 200px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.copy-rodape {
   text-align: center;
-  font-size: 0.6rem;
-  color: var(--cor-texto-branco);
+  font-size: 0.85rem;
   margin-top: 25px;
-  padding-top: 15px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 /* ======================================
@@ -507,23 +478,6 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 
 
   /* HEADER */
-  .headerTop {
-    height: auto;
-    min-height: 60px;
-    flex-wrap: wrap;
-    padding: 5px 0;
-  }
-
-  .imageLogo {
-    height: 80px;
-    margin: auto 10px auto 15px;
-  }
-
-  .h1HEADER {
-    font-size: clamp(18px, 5vw, 24px);
-  }
-
-
 
   .headerBottom {
     height: auto;
@@ -565,81 +519,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     padding-left: 0;
   }
 
-  /* FOOTER */
-  .footerDad {
-    flex-direction: column;
-    padding: 10px 8px;
-    gap: 10px;
-    text-align: center;
-  }
 
-
-  .footerSection {
-    width: 95%;
-    align-items: center;
-    padding: 0;
-  line-height: 1.4;
-  }
-
-
-  .footerSection:first-child::after {
-    display: none;
-  }
-
-  .logoFooterSection {
-    margin-bottom: 5px;
-    /* antes estava 15px */
-  }
-
-  .emailLineFooter {
-    justify-content: center;
-  }
-
-  .textFooter {
-    margin-bottom: 5px;
-    /* aproxima os textos */
-    font-size: 16px;
-    /* levemente menor */
-  }
-
-  .imagensFooter {
-    justify-content: center;
-    padding: 5px 0;
-    /* reduz espaço vertical */
-    gap: 10px;
-  }
-
-  .buttonFooter {
-    width: 180px;
-    min-width: 130px;
-    padding: 8px 10px;
-    /* botão mais compacto */
-    font-size: 0.95rem;
-  }
-
-  #Map {
-    width: 100%;
-    padding: 10px 0 0 0;
-    width: 95%;
-    align-items: center;
-    /* Centraliza os itens */
-    text-align: center;
-  }
-
-  #Map p {
-    margin: 0;
-    text-align: center;
-    font-size: small;
-  }
-
-  .mapa-estilizado {
-    max-width: 100%;
-  }
-
-  #AdmAcess {
-    align-self: center;
-    margin-top: 20px;
-  }
 
   /* ======================================
 MENU HAMBURGUER 
@@ -751,4 +631,47 @@ MENU HAMBURGUER
     font-size: 16px !important;
     transition: 0.5s;
   }
+
+  .rodape-agrirslab {
+    padding: 30px 20px;
+  }
+
+  .container-rodape {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .coluna-esquerda,
+  .coluna-direita {
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-rodape {
+    margin: 0 auto;
+  }
+
+  .botao-acesso {
+    margin: 0 auto;
+  }
+
+  .icones-redes {
+    justify-content: center;
+  }
+
+  .divisoria-rodape {
+    display: none;
+  }
+
+  .mapa-rodape {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .copy-rodape {
+    margin-top: 20px;
+  }
+
 }
