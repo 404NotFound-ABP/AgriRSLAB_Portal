@@ -1,9 +1,47 @@
 # Sprint 3
 
-| ID      | Seção / Atividade                                   | Pontuação | Disciplina | Sprint |
-|---------|-----------------------------------------------------|-----------|------------|--------|
-| *DW-025*  | Inserir informações institucionais e links para redes sociais | 20        | DW         | 3 |
-| *AL-001*  | Sistema de login para área administrativa         | 40        | AL         | 3 |
-| *SO-003*  | Subir projeto                             | 13        | SO         | 3 |
-| *MB-001*  | Modelagem do banco de dados                         | 40        | MB         | 3 |
-| *MB-003*  | Layout e funcionalidades da área de administração | 20        | MB         | 3 |
+
+## Backlog Sprint 3
+
+| item | Funcionalidade | Descrição | Prioridade |
+|------|----------------|-----------|------------|
+|      |               |         |           |
+|      |               |           |           |
+|      |               |         |          |
+|      |               |            |           |
+|      |               |        |          |
+|      |              |        |          |
+|      |             |          |          |
+|      |               |          |          |
+|      |             |        |          |
+|     |                |          |           |
+|      |             |           |         |
+|      |            |            |         |
+|      |               |        |           |
+|      |               |            |         |
+|      |                |           |         |
+
+
+
+## Burndown Sprint 3
+
+
+
+## Tasks Sprint 3
+
+Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pendente e ✅ quando concluída.
+
+
+| ID      | Tarefa                     | Autor           | Data  | Pontuação | Disciplina | Requisitos Atendidos | Status |
+|---------|----------------------------|-----------------|-------|-----------|------------|---------------------|--------|
+|  | Sistema de login para área administrativa                   |           |       |           |            |                     |      |
+|  | Subir projeto                    |           |       |           |            |                      |      |
+|  | Modelagem do banco de dados                    |           |       |           |            |                     |      |
+|  | Layout e funcionalidades de todas as páginas                    |          |      |  |            |                     |      |  
+|  |                   |            |      |           |            |                     |      |
+|  |             |             |   |           |            |                     |      |
+|  |                     |             |  |           |            |                     |      |
+|  |              |   | |           |            |                     |      |
+|  |                  |             |  |          |            |                     |      |
+
+
