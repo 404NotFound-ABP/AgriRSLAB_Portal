@@ -9,8 +9,6 @@
     text-align: center;
     align-items: center;
     align-content: center;
-    margin-top: 100px;
-    margin-bottom: 30px;
 }
 
 
@@ -30,6 +28,23 @@
     margin-top: 15px;
 }
 
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    /* centraliza verticalmente */
+}
+
+/* Caixa branca do formulário */
+.form-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
 .form-admin {
     text-align: center;
 }
@@ -47,7 +62,26 @@
 .form-group>input {
     margin-bottom: 15px;
     width: 300px;
+    font-size: 20px;
+    /* --- Additions below --- */
+    padding: 10px;
+    /* Adds some inner spacing */
+    border: 1px solid var(--verde-claro);
+    border-radius: 10px;
+    /*Rounds the corners */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
 
+
+.form-group>label {
+    margin-bottom: 5px;
+}
+
+.form-group>input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--verde-escuro);
+
+    border-color: var(--verde-escuro);
 }
 
 .admin-footer-wrapper {
@@ -61,6 +95,7 @@
     /* Ocupa toda a largura da página */
     z-index: 9999;
     /* Fica por cima de todos os elementos */
+
 }
 
 .admin-footer {
