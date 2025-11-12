@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin do AgrisLab</title>
+    <title>Login - Admin do AgrisLab</title>
     <link rel="stylesheet" href="admin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,41 +12,48 @@
         href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 </head>
-<header>
-    <div class="headerTop">
-        <h1 class="h1HEADER">Painel Administrativo</h1>
-    </div>
-</header>
 
 
 
 
 <!-- =======================    Feito por João Otávio   ======================= -->
-<body>
 
+<body>
+    <header>
+        <div class="headerTop">
+            <img class="imageLogo" src="../Paginas/HeaderFooter/imagens/logo.png" alt="">
+            <h1 class="h1HEADER">Painel Administrativo</h1>
+        </div>
+    </header>
     <div class="login-container">
 
-
-        <h2 class="h2-admin">Faça seu login</h2>
-
-
-        <form class="form-admin" action="/login-admin" method="POST">
+        <div class="form-container">
+            <h2 class="h2-admin">Faça seu login</h2>
 
 
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input class="input-admin" type="email" id="email" name="email_admin" required>
-            </div>
+            <form class="form-admin" action="/login-admin" method="POST">
 
-            <div class="form-group">
-                <label for="senha">Senha:</label>
-                <input class="input-admin" type="password" id="senha" name="senha_admin" required>
-            </div>
 
-            <button class="button-admin" type="submit">Entrar</button>
-        </form>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="input-admin" type="email" id="email" name="email_admin" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input class="input-admin" type="password" id="senha" name="senha_admin" required>
+                </div>
+
+                <button class="button-admin" type="submit">Entrar</button>
+            </form>
+        </div>
+
     </div>
-
+    <div class="admin-footer-wrapper">
+        <footer class="admin-footer">
+            <span>2025 AgrisLab | Suporte</span>
+        </footer>
+    </div>
 </body>
 <!-- =======================    Feito por João Otávio   ======================= -->
 
