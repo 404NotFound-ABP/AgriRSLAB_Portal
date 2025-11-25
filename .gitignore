@@ -1,0 +1,8 @@
+node_modules
+/src/upload/*.jpg
+/src/upload/*.jpeg
+/src/upload/*.png
+/src/upload/*.gif
+/src/upload/*.pdf
+
+!/upload/.gitkeep

@@ -1,0 +1,292 @@
+:root{
+  --verde-1:#36794E;
+  --verde-2:#55A357;  
+  --marrom:#604639;
+  --azul1:#0F5289;
+  --azul2:#487DB4;
+  --azul-clarinho1:#DDF1FB;
+  --azul-clarinho2:#BCE2F7;
+  --verde-claro:#d8f3dc;
+  --verde-borda:#cfe9d7;
+  --cinza-BACK:#f8f9fa;
+  --cinza-borda:#e6e6e6;
+  --cinza-escuro:#3a3a3a;
+  --texto:#333;
+}
+
+html,body{ overflow-x:hidden }
+
+body{
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  font-family:"Montserrat",sans-serif;
+  font-weight:400;
+  background:#F8F9FA;
+  color:var(--texto);
+}
+
+main{
+  flex-grow:1;
+  padding:20px 50px 20px 20px;
+}
+
+*{
+  font-family:"Montserrat",sans-serif;
+  box-sizing:border-box;
+}
+
+/* Montserrat */
+.montserrat{
+  font-family:"Montserrat",sans-serif;
+  font-optical-sizing:auto;
+  font-weight:400;
+  font-style:normal;
+}
+
+/* Merriweather */
+.merriweather{
+  font-family:"Merriweather",serif;
+  font-optical-sizing:auto;
+  font-weight:400;
+  font-style:normal;
+  font-variation-settings:"wdth" 100;
+}
+
+/* Container principal */
+.container-vagas{
+  width:100%;
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 60px;
+  box-sizing:border-box;
+}
+
+/* Banner */
+.banner-vagas{
+  background:#E0F9D5;
+  padding:0 10px 30px;
+}
+.banner-vagas .chamada-vagas{
+  background:#abd8acdc;
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:6px;
+  font-size:.9rem;
+  margin-bottom:5px;
+}
+
+/* Botões */
+.btn-vagas{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-weight:600;
+  text-decoration:none;
+  border:1px solid transparent;
+  border-radius:10px;
+  padding:12px 18px;
+  cursor:pointer;
+  transition:transform .06s ease, box-shadow .2s ease, background-color .2s ease;
+  box-shadow:0 1px 0 rgba(0,0,0,.06);
+}
+.btn-sm-vagas{ padding:8px 14px; font-size:.9rem; border-radius:8px }
+.btn-primary-vagas{
+  background:#55A357;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  font-weight:600;
+  padding:10px 16px;
+  font-size:.95rem;
+  gap:10px;
+  display:inline-flex;
+  align-items:center;
+  width:auto;
+  margin:0;
+  box-shadow:0 4px 0 #36794E;
+  transition:transform .1s ease-in-out, background-color .2s ease;
+}
+.btn-primary-vagas:hover{ background:#4b924d }
+.btn-primary-vagas:active{
+  transform:translateY(3px);
+  box-shadow:0 1px 0 #36794E;
+}
+
+/* Títulos */
+.section-title-vagas{
+  font-size:1.35rem;
+  font-weight:600;
+  margin-bottom:32px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  position:relative;
+}
+.section-title-vagas::after{
+  content:"";
+  height:3px;
+  width:100%;
+  background:#55A357;
+  border-radius:2px;
+  position:absolute;
+  bottom:-8px;
+  left:0;
+}
+
+/* Cards */
+.oportunidades-vagas{ padding:60px 0 }
+.cards-vagas{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:32px;
+  align-items:stretch;
+}
+.card-vagas {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 28px 28px;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 3px 6px rgba(0,0,0,.08);
+  transition: transform .15s ease, box-shadow .15s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-vagas .btn-primary-vagas {
+  align-self: flex-end;
+  margin-top: auto;          /* empurra o botão pro fim do card */
+  width: auto !important;    /* garante que não ocupe todo o card */
+  display: inline-flex !important;
+  justify-content: center;
+}
+
+
+.card-vagas h5 {
+  margin: 18px 0 8px;
+  font-weight: 600;
+}
+
+.card-vagas:hover{
+  transform:translateY(-3px);
+  box-shadow:0 6px 12px rgba(0,0,0,.12);
+}
+
+/* Inscrições */
+.inscricoes-vagas{ padding:40px 0; background:#F8F9FA }
+.inscricoes-vagas .card-vagas{
+  width:100%;
+  padding:10px 28px 20px;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 3px 6px rgba(0,0,0,.08);
+  box-sizing:border-box;
+  margin-top:32px;
+}
+.inscricoes-vagas .card-vagas p{ margin-bottom:20px }
+
+/* Linhas de pesquisa */
+.linhas-vagas{ padding:40px 0 }
+.cards-grid-vagas{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:24px;
+  align-items:stretch;
+}
+.cards-grid-vagas .card-vagas{
+  background:#fff;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.05);
+  padding:10px 20px 20px;
+  box-sizing:border-box;
+}
+.card-full-vagas{
+  width:100%;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 4px 6px rgba(0,0,0,.1);
+  border:1px solid rgba(0,0,0,.05);
+  margin-top:20px;
+  padding:20px;
+  box-sizing:border-box;
+}
+
+/* Como ingressar */
+.comoingressar-vagas{ padding:40px 0 }
+.comoingressar-vagas .cards-ingressar-vagas{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(280px,1fr));
+  gap:24px;
+  align-items:stretch;
+}
+.comoingressar-vagas .card-vagas{
+  display:flex;
+  flex-direction:column;
+  margin:0;
+  transition:none;
+}
+.comoingressar-vagas .card-vagas:hover{
+  transform:none;
+  box-shadow:0 3px 6px rgba(0,0,0,.08);
+}
+.comoingressar-vagas .card-vagas h4{ margin:0 0 12px }
+
+/* Responsividade */
+@media (max-width:1200px){
+  .container-vagas{ padding:0 40px }
+  .card-vagas{ padding:10px 24px 24px }
+}
+@media (max-width:1024px){
+  .container-vagas{ padding:0 32px }
+  .cards-vagas{ grid-template-columns:repeat(2,minmax(280px,1fr)); gap:28px }
+  .cards-grid-vagas{ grid-template-columns:repeat(2,minmax(260px,1fr)); gap:24px }
+  .section-title-vagas{ font-size:1.25rem }
+  .card-full-vagas{ padding:18px }
+  .btn-primary-vagas{ padding:10px 14px; font-size:.95rem }
+}
+@media (max-width:900px){
+  .banner-vagas{ padding:0 10px 24px }
+  .card-vagas h5{ margin:14px 0 6px }
+  .card-vagas{ padding:10px 20px 20px }
+}
+@media (max-width:768px){
+  .container-vagas{ padding:0 24px }
+  .cards-vagas,
+  .cards-grid-vagas{ grid-template-columns:1fr; gap:20px }
+  .comoingressar-vagas .cards-ingressar-vagas{ grid-template-columns:1fr; gap:20px }
+  .banner-vagas .chamada-vagas{ font-size:.85rem }
+  .banner-vagas h2{ font-size:clamp(1.25rem,5vw,1.5rem) }
+  .section-title-vagas{ font-size:1.15rem }
+  .card-vagas a.btn-primary-vagas,
+  .card-vagas button.btn-primary-vagas{
+    display:flex !important;
+    width:100% !important;
+    justify-content:center;
+    align-items:center;
+    white-space:normal !important;
+    overflow-wrap:anywhere;
+    padding:12px 14px;
+    box-sizing:border-box;
+  }
+}
+@media (max-width:600px){
+  .container-vagas{ padding:0 20px }
+  .card-vagas{ padding:10px 18px 18px }
+  .card-vagas p, .card-vagas li{ font-size:.95rem; line-height:1.45 }
+  .card-full-vagas{ padding:16px }
+}
+@media (max-width:480px){
+  .container-vagas{ padding:0 16px }
+  .cards-vagas, .cards-grid-vagas{ gap:16px }
+  .section-title-vagas{ font-size:1.05rem }
+  .section-title-vagas::after{ bottom:-6px }
+  .banner-vagas{ padding-bottom:18px }
+  .btn-sm-vagas{ padding:8px 12px; font-size:.9rem }
+}
+@media (prefers-reduced-motion:reduce){
+  .btn-vagas, .card-vagas{ transition:none !important }
+  .card-vagas:hover{ transform:none !important }
+}

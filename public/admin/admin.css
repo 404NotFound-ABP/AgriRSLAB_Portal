@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* =====================
+    CSS DA TELA DE LOGIN
+   ===================== */
+
+.h2-admin {
+    align-items: center;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+
+.button-admin {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 12px 18px;
+    cursor: pointer;
+    transition: transform .06s ease, box-shadow .2s ease, background-color .2s ease;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .06);
+    background-color: var(--verde-escuro);
+    color: white;
+    margin-top: 15px;
+}
+
+.button-logout {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 12px 18px;
+    cursor: pointer;
+    transition: transform .06s ease, box-shadow .2s ease, background-color .2s ease;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .06);
+    background-color: crimson;
+    color: white;
+    margin-right: 20px;
+}
+
+.button-logout>span {
+    margin-left: 10px;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    /* centraliza verticalmente */
+}
+
+/* Caixa branca do formulário */
+.form-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-admin {
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group>label {
+    margin-bottom: 5px;
+}
+
+.form-group>input {
+    margin-bottom: 15px;
+    width: 300px;
+    font-size: 20px;
+    /* --- Additions below --- */
+    padding: 10px;
+    /* Adds some inner spacing */
+    border: 1px solid var(--verde-claro);
+    border-radius: 10px;
+    /*Rounds the corners */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+
+.form-group>label {
+    margin-bottom: 5px;
+}
+
+.form-group>input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--verde-escuro);
+
+    border-color: var(--verde-escuro);
+}
+
+.mensagem-admin svg {
+    margin-left: 5px; /* Espaço entre o texto e o ícone */
+    vertical-align: middle; /* Alinha o ícone com o texto */
+}
+
+.admin-footer-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.admin-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #604639;
+    color: white;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+/* =====================
+    CSS DAS PAGINAS ADMIN
+   ===================== */
+.mensagem-admin {
+    font-size: 16px;
+}
+
+.mensagem-admin > a {
+    font-weight: bold;
+    color: var(--fundo-branco);
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+}
+
+.sidebar {
+    height: 100vh;
+    /* altura total da janela */
+    width: 200px;
+    /* largura do menu */
+    position: fixed;
+    /* fixa na lateral */
+    margin-top: 100px;
+    left: 0;
+    background-color: var(--verde-escuro);
+    padding-top: 20px;
+}
+
+/* Links do menu */
+.admin-selecionavel {
+    display: block;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+}
+
+.admin-atual {
+    display: block;
+    color: black;
+    padding: 12px 30px;
+    text-decoration: none;
+    background-color: var(--fundo-branco);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-left: 10px;
+}
+
+.sidebar>span {
+    display: block;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.sidebar > .admin-selecionavel:hover {
+    background-color: var(--verde-claro);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-left: 10px;
+}
+
+/* Conteúdo principal */
+.main {
+    margin-left: 220px;
+    /* cria espaço pro menu */
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.admin-h2 {
+    border-bottom: 3px solid #36794E;
+    padding-bottom: 5px;
+}
+
+
+/* ======================================
+   VARIÁVEIS GERAIS
+====================================== */
+:root {
+    --verde-escuro: #36794E;
+    --verde-claro: #55A357;
+    --verde-clarinho: #E0F9D5;
+
+    --azul-escuro: #0F5289;
+    --azul-claro: #487DB4;
+    --azul-clarinho1: #DDF1FB;
+    --azul-clarinho2: #BCE2F7;
+    --azul-card: #d4e8f8;
+
+
+    --marrom: #604639;
+    --fundo-branco: #F8F9FA;
+    --texto-escuro: #333;
+    --texto-claro: #f0f2f5;
+    --cor-texto-branco: #ffffff;
+    --sombra: rgba(0, 0, 0, 0.3);
+
+    --amarelo-ver: #D3D840;
+}
+
+.titulo-admin {
+    background-color: #36794E;
+    color: white;
+
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat", "Open Sans", Arial, sans-serif;
+}
+
+/* =====================
+   REGRAS BÁSICAS
+===================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--fundo-branco);
+}
+
+/* Mantém o conteúdo sempre ocupando o restante da tela */
+main {
+    margin: 0 auto;
+    /* reduz o espaço lateral e superior */
+    max-width: 95%;
+}
+
+/* Define comportamento padrão para links e imagens */
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ======================================
+   HEADER
+====================================== */
+
+header {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    z-index: 1000; 
+    background-color: var(--verde-escuro);
+}
+
+.headerTop {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    min-height: 50px;
+    margin: 0;
+    padding: 0;
+    background-color: var(--verde-escuro);
+}
+
+.imageLogo {
+    height: 80px;
+    aspect-ratio: 1 / 1;
+    margin: auto 1.5vw auto 2.5vw;
+    border-radius: 50%;
+    padding: 3px;
+    flex-shrink: 0;
+}
+
+.h1HEADER {
+    color: var(--cor-texto-branco);
+    text-align: left;
+    white-space: normal;
+    /* permite quebra */
+    flex: 1;
+}

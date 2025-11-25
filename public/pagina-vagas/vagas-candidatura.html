@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vagas AgriRS</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS da página -->
+  <link rel="stylesheet" href="style-candidatura.css" />
+  <link rel="stylesheet" href="../HeaderFooter/style.css">
+</head>
+
+<body class="body-canditadura">
+
+
+  <!-- ===== /HEADER ===== -->
+
+  <header></header>
+
+
+  <!-- ===== CONTEÚDO DA PÁGINA ===== -->
+  <main class="main-canditadura">
+    <div class="container-canditadura">
+      <section class="section-plain-canditadura">
+        <h2 class="section-title-canditadura">💼 Oportunidades de Trabalho</h2>
+
+        <div class="vacancy-canditadura">
+
+          <p class="lead-canditadura">
+            <span class="muted-canditadura">🔎</span>
+            <strong>Detalhes da Vaga:</strong>
+            <span id="vaga-titulo">Carregando...</span>
+          </p>
+
+          <h3 class="mini-title-canditadura">Descrição:</h3>
+          <p id="vaga-descricao">Carregando...</p>
+
+          <h3 class="mini-title-canditadura">Requisitos:</h3>
+          <ul class="ul-clean-canditadura" id="vaga-requisitos">
+            <li>Carregando...</li>
+          </ul>
+
+          <h3 class="mini-title-canditadura">Benefícios:</h3>
+          <ul class="ul-clean-canditadura" id="vaga-beneficios">
+            <li>Carregando...</li>
+          </ul>
+
+          <h3 class="mini-title-canditadura">🏛️ Cultura Organizacional</h3>
+          <p>Na AGRIRS LAB · INPE, promovemos um ambiente de trabalho baseado em:</p>
+          <ul class="ul-dash-canditadura">
+            <li><strong>Colaboração:</strong> Trabalhamos em equipe para alcançar objetivos científicos e tecnológicos.
+            </li>
+            <li><strong>Inovação:</strong> Estimulamos ideias novas e soluções criativas para desafios ambientais.</li>
+            <li><strong>Diversidade:</strong> Valorizamos diferentes perspectivas e experiências.</li>
+            <li><strong>Desenvolvimento:</strong> Incentivamos o crescimento profissional e pessoal dos nossos
+              colaboradores.</li>
+          </ul>
+
+        </div>
+
+      </section>
+
+      <section class="card-canditadura" aria-labelledby="titulo-form">
+        <h2 id="titulo-form" class="section-title-canditadura">✉️ Envie sua Candidatura</h2>
+
+        <form class="form-canditadura" action="#" method="post" novalidate>
+          <label class="label-canditadura">Nome*
+            <input class="input-canditadura" type="text" name="nome" required>
+          </label>
+
+          <label class="label-canditadura">E-mail*
+            <input class="input-canditadura" type="email" name="email" required>
+          </label>
+
+          <label class="label-canditadura">Telefone
+            <input class="input-canditadura" type="tel" name="telefone" inputmode="tel">
+          </label>
+
+          <label class="label-canditadura">Lattes, Currículo ou LinkedIn
+            <input class="input-canditadura" type="url" name="lattes" placeholder="https://...">
+          </label>
+
+          <label class="label-canditadura">Anexar Currículo (PDF ou DOC)
+            <input class="input-canditadura file-canditadura" type="file" name="cv" accept=".pdf,.doc,.docx">
+          </label>
+
+          <label class="label-canditadura">Resumo de Experiência
+            <textarea class="textarea-canditadura" name="resumo" rows="8"
+              placeholder="Conte, em poucas linhas, suas experiências mais relevantes..."></textarea>
+          </label>
+
+          <div class="form-actions-canditadura">
+           <button type="submit" id="btn-candidatura-submit" class="btn-canditadura btn-primary-canditadura">
+                <span>Confirmar Candidatura</span>
+                <div class="spinner-faleconosco"></div>
+            </button>
+          </div>
+          <div id="candidatura-message" class="form-message"></div>
+        </form>
+      </section>
+    </div>
+  </main>
+  <!-- ===== /CONTEÚDO ===== -->
+
+  <!-- ===== FOOTER  ===== -->
+  <footer></footer>
+  <script src="vagas-candidatura.js"></script>
+  <script src="candidatura.js"></script>
+  <script src="../HeaderFooter/menu-header.js"></script>
+
+
+</body>
+
+</html>

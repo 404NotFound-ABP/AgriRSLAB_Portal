@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Notícias Agrirslab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--responsividade-->
+
+    <!-- Linkando o CSS -->
+    <link rel="stylesheet" href="../pagina-noticias/styleNoticias.css">
+    <link rel="stylesheet" href="../HeaderFooter/style.css">
+
+    <!-- Importando fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body>
+  
+  <header></header>
+
+  <main id="todas-noticias">
+
+  <!-- FILTROS -->
+  <div class="filtros-superiores">
+    <div class="filterCategorySelection">
+      <select name="CategorySelection" id="CategorySelection" class="yearSelection">
+        <option value="todas" selected>Categoria</option>
+        <option value="curso">Curso</option>
+        <option value="defesa">Defesa</option>
+        <option value="informativo">Informativo</option>
+      </select>
+    </div>
+
+    <div id="FillterYearSelection" class="filterYearSelection">
+      <select name="YearSelection" id="YearSelection" class="yearSelection">
+        <option value="todas" selected>Ano</option>
+        <option value="2025">2025</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- NOTÍCIAS -->
+     <div class="cards-noticias">
+        
+        <div id="container-noticias-dinamicas">
+        </div>
+
+        <div class="ver-todas">
+            <button class="btn-ver-mais">Ver mais notícias</button>
+        </div>
+
+    </main>
+
+    <footer>
+     </footer>
+    <script src="../HeaderFooter/menu-header.js"></script>
+    <script src="noticias.js" defer></script>
+
+</body>
+
+</html>

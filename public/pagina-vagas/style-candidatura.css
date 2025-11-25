@@ -1,0 +1,250 @@
+:root{
+  --verde-1:#36794E;
+  --verde-2:#55A357;  
+  --marrom:#604639;
+  --azul1:#0F5289;
+  --azul2:#487DB4;
+  --azul-clarinho1:#DDF1FB;
+  --azul-clarinho2:#BCE2F7;
+  --verde-claro:#d8f3dc;
+  --verde-borda:#cfe9d7;
+  --cinza-BACK:#f8f9fa;
+  --cinza-borda:#e6e6e6;
+  --cinza-escuro:#3a3a3a;
+  --texto:#333;
+  --verde-acao:#55A357;
+}
+
+*{
+  box-sizing:border-box;
+  font-family:"Montserrat",sans-serif;
+}
+html,body{
+  height:100%;
+  overflow-x:hidden;
+}
+body{
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  background:#F8F9FA;
+  color:var(--texto);
+}
+main{
+  flex-grow:1;
+  padding:20px 50px 20px 20px;
+}
+
+/* ===== Container padrão candidatura ===== */
+.body-canditadura{
+  margin:0;
+  background:#F8F9FA;
+  color:var(--texto);
+  line-height:1.5;
+}
+.container-canditadura{
+  width:100%;
+  max-width:1120px;
+  margin:20px auto;
+  padding:0 60px;
+}
+
+/*====================FONTES====================*/
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.merriweather{
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:"wdth" 100;
+}
+
+/* ===== CONTEÚDO (Candidatura) ===== */
+.section-title-canditadura{
+  font-size:1.35rem;
+  font-weight:600;
+  margin:0 0 32px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  position:relative;
+}
+.section-title-canditadura::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  height:3px;
+  width:100%;
+  background:var(--verde-acao); 
+  border-radius:2px;
+}
+
+.section-plain-canditadura{
+  background:transparent; border:0; box-shadow:none; padding:0; margin:0 0 22px
+}
+.section-plain-canditadura .section-title-canditadura{ margin-top:6px }
+
+.card-canditadura{
+  background:#fff;
+  border:1px solid var(--cinza-borda);
+  border-radius:12px;
+  padding:10px 28px 28px;
+  box-shadow:0 3px 6px rgba(0,0,0,.08);
+  margin-bottom:22px;
+}
+
+.lead-canditadura{ margin:0 0 16px }
+.muted-canditadura{ opacity:.85 }
+.mini-title-canditadura{ font-size:15px; margin:18px 0 8px; font-weight:600; color:#2a2a2a }
+
+.ul-clean-canditadura{ margin:0; padding-left:20px }
+.ul-clean-canditadura li{ margin:6px 0 }
+
+.ul-dash-canditadura{ list-style:none; margin:0; padding:0 }
+.ul-dash-canditadura li{ position:relative; padding-left:20px; margin:6px 0 }
+.ul-dash-canditadura li::before{ content:"–"; position:absolute; left:0; top:0; color:#2c2c2c }
+
+.form-canditadura{ display:grid; grid-template-columns:1fr; gap:14px }
+.label-canditadura{ display:flex; flex-direction:column; gap:8px; font-weight:600; font-size:14px }
+
+.input-canditadura,
+.textarea-canditadura{
+  width:100%;
+  background:#fff;
+  border:1px solid var(--cinza-borda);
+  border-radius:10px;
+  padding:12px;
+  font:inherit;
+  outline:none;
+}
+.input-canditadura:focus,
+.textarea-canditadura:focus{
+  border-color:var(--verde-borda);
+  box-shadow:0 0 0 3px var(--verde-claro);
+}
+
+.file-canditadura::file-selector-button{
+  padding:8px 12px;
+  border-radius:8px;
+  border:1px solid var(--cinza-borda);
+  background:#f2f2f2;
+  cursor:pointer;
+  font:inherit;
+}
+
+.textarea-canditadura{ resize:vertical }
+
+.form-actions-canditadura{ display:flex; justify-content:flex-end; margin-top:6px }
+
+.btn-canditadura{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-weight:600;
+  border-radius:8px;
+  padding:12px 24px;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:transform .1s ease-in-out, box-shadow .2s ease, background-color .2s ease;
+  text-decoration:none;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-primary-canditadura{
+  background:#55A357;
+  color:#fff;
+  box-shadow:0 4px 0 #36794E;
+}
+.btn-primary-canditadura:hover{ background:#4b924d }
+.btn-primary-canditadura:active{
+  transform:translateY(3px);
+  box-shadow:0 1px 0 #36794E;
+}
+
+/* ==================== SPINNER DE CARREGAMENTO ==================== */
+
+.spinner-faleconosco {
+  display: none; 
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid var(--cor-texto-branco);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.btn-canditadura.loading .spinner-faleconosco {
+    display: inline-block !important;
+}
+.btn-canditadura.loading {
+    cursor: not-allowed;
+    pointer-events: none; 
+    background: #4b924d;
+    color: transparent !important; 
+}
+.btn-canditadura.loading span {
+    display: none !important; 
+}
+
+/* ==================== MENSAGEM DE FEEDBACK ==================== */
+.form-message {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: none; /* Inicia oculto */
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-message.success {
+  background-color: #e6f6e7;
+  color: var(--texto-sucesso);
+  border: 1px solid var(--texto-sucesso);
+}
+
+.form-message.error {
+  background-color: #fce7e7;
+  color: var(--texto-erro);
+  border: 1px solid var(--texto-erro);
+}
+
+/* ====== Responsivo geral ====== */
+@media (max-width:1024px){
+  .container-canditadura{ padding:0 32px }
+  .section-title-canditadura{ margin-bottom:26px }
+  .card-canditadura{ padding:10px 22px 22px }
+}
+
+@media (max-width:900px){
+  .container-canditadura{ padding:0 24px }
+  .mini-title-canditadura{ font-size:14.5px }
+}
+
+@media (max-width:560px){
+  .body-canditadura{ font-size:15px }
+  .section-title-canditadura{ font-size:1.05rem }
+  .mini-title-canditadura{ font-size:13.5px }
+  .btn-canditadura{ font-size:13.5px }
+  .btn-canditadura{ width:100%; justify-content:center }
+}
+
+@media (min-width:1200px){
+  main{ padding:30px 80px 30px 40px; }
+}

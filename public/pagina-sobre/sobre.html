@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre - AGRIRS LAB</title>
+
+  <!-- Header/footer -->
+  <link rel="stylesheet" href="../HeaderFooter/style.css">
+  <!-- CSS desta página -->
+  <link rel="stylesheet" href="./sobre.css">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- HEADER  -->
+  <header></header>
+
+  <!-- SEÇÃO SOBRE -->
+  <main class="sobre-wrapper">
+    <section class="sobre-about">
+      <div class="sobre-grid">
+        <!-- imagem -->
+        <div class="sobre-img">
+          <img src="../../imagens/5. Parceiros/membros.png" alt="Equipe AgrIRS Lab">
+        </div>
+        <button onclick="setLanguage('pt')">PT</button>
+        <button onclick="setLanguage('en')">EN</button>
+
+        <!-- caixa de cima (verde clara) -->
+        <div class="sobre-card-top">
+          <p data-i18n="hero.title"></p>
+        </div>
+
+        <!-- caixa de baixo (verde escura) -->
+        <div class="sobre-card-bottom">
+          <p data-i18n="hero.subtitle"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sobre-partners">
+      <h2>AGÊNCIAS DE FOMENTO E COLABORADORES</h2>
+      <div class="sobre-partners-logos">
+        <img src="../../imagens/5. Parceiros/FAP.png" alt="Logo FAPESP">
+        <img src="../../imagens/5. Parceiros/capes.png" alt="Logo CAPES">
+        <img src="../../imagens/5. Parceiros/INPE.png" alt="Logo INPE">
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER PADRÃO -->
+      <footer></footer>
+        <script src="../HeaderFooter/menu-header.js"></script>
+</body>
+</html>

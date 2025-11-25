@@ -1,0 +1,184 @@
+/* RESET BÁSICO DA PÁGINA */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+/* ===================== ÁREA SOBRE ===================== */
+.sobre-wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 60px 0px 80px;
+}
+
+.sobre-about {
+  margin-bottom: 60px;
+}
+
+.sobre-grid {
+  position: relative;
+  height: 540px;
+}
+
+/* ===== IMAGEM */
+.sobre-img {
+  position: absolute;
+  top: 0;
+  right: -135px;
+  width: 700px;
+  height: 300px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  background: #d5e5f0;
+  z-index: 3;
+}
+.sobre-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== CARD DE CIMA (verde claro) =====
+   Figma: começa mais à esquerda, entra por baixo da imagem
+*/
+.sobre-card-top {
+  position: absolute;
+  top: 50px;        
+  left: -250px;           
+  width: 350px;
+  height: 230px;      
+  background: #55A357;
+  color: #fff;
+  padding: 40px 30px 40px 30px;
+  border-radius: 28px;
+  box-shadow: 0 14px 45px rgba(0,0,0,0.15);
+  z-index: 1;
+}
+
+/* ===== CARD DE BAIXO =====*/
+.sobre-card-bottom {
+  position: absolute;
+  top: 270px;         
+  right: -190px;
+  width: 900px;
+  background: #2f6e3a;
+  color: #fff;
+  padding: 40px 30px 30px 30px;
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.16);
+  z-index: 1;
+}
+.sobre-card-bottom p {
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.sobre-card-bottom p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== PARCEIROS ===== */
+.sobre-partners {
+  text-align: center;
+  padding: 10px 20px 0;
+}
+.sobre-partners h2 {
+  font-size: 24px;
+  margin-bottom: 32px;
+  color: #333;
+}
+.sobre-partners-logos {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.sobre-partners-logos img {
+  height: 80px;
+  object-fit: contain;
+}
+
+/* ===================== RESPONSIVO ===================== */
+@media (max-width: 767px) {
+.sobre-wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px 24px 40px;   
+}
+
+  .sobre-grid {
+    position: static;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+  }
+
+  /* texto de cima */
+  .sobre-card-top {
+    order: 1;
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    width: 100%;
+    color: #234;
+    text-align: center;
+  }
+
+  /* foto no meio */
+  .sobre-img {
+    order: 2;
+    position: static;
+    width: min(100%, 340px); 
+    height: 210px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 auto 8px;      
+  }
+
+  .sobre-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* texto de baixo */
+  .sobre-card-bottom {
+    order: 3;
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    width: 100%;
+    color: #234;
+    text-align: center;
+  }
+
+  /* textos */
+  .sobre-card-top p,
+  .sobre-card-bottom p {
+    max-width: 360px;       
+    margin: 0 auto 14px;    
+    text-align: center;
+  }
+
+  .sobre-partners {
+    padding: 24px 0 0;
+    text-align: center;
+  }
+
+ img[alt="Equipe AgrIRS Lab"] {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto 16px;  
+  }
+
+}
+
+ 

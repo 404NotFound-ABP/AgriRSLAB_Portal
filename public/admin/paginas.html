@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin AgriRSlab - Início</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="headerTop">
+            <h1 class="h1HEADER">Painel Administrativo</h1>
+        </div>
+        <!-- <button id="btn-abrir-cadastro" class="btn-primary btnCadastro">
+            + Cadastrar Nova Publicação
+        </button> -->
+
+        <a href="artigos-admin.html" class="btn-primary btnCadastro">
+            Painel de Publicações
+        </a>
+
+        <a href="membros-admin.html" class="btn-primary btnCadastro">
+            Painel de Membros
+        </a>
+
+        <a href="projetos-admin.html" class="btn-primary btnCadastro">
+            Painel de Projetos
+        </a>
+    </header>
+
+    <!-- <main id="container-artigos">
+        <h2>Carregando Publicações...</h2>
+    </main> -->
+
+    <!-- <div id="modal-cadastro" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Cadastrar Nova Publicação</h3>
+            <form id="form-cadastro">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+
+                <label for="id_categoria">Categoria:</label>
+                <select id="id_categoria" name="id_categoria" required>
+                    <option value="" disabled selected>Selecione uma categoria</option>
+                    <option value="1">Artigos</option>
+                    <option value="2">Artigos de Conferência (AC)</option>
+                    <option value="3">Capítulos de livros (CL)</option>
+                    <option value="4">Notas Técnicas (NT)</option>
+                </select>
+
+                <label>Imagem (URL ou Upload):</label>
+                <div class="form-row">
+                    <div class="form-group-half">
+                        <label class="urlUpload">URL:</label>
+                        <input type="text" id="url_imagem_input" placeholder="Cole a URL da imagem">
+                    </div>
+                    <div class="form-group-half">
+                        <label class="urlUpload">Upload:</label>
+                        <input type="file" id="imagem_file_input" name="imagem" accept="image/*">
+                    </div>
+                </div>
+
+                <div class="image-preview-container">
+                    <span>Imagem Atual:</span>
+                    <img id="cadastro-img-preview" src="" alt="Preview da Imagem" style="max-width: 100px; display: none;">
+                </div>
+                
+                <label for="link_doi">Link DOI:</label>
+                <input type="url" id="link_doi" name="link_doi" required>
+
+                <label>PDF da Publicação (URL ou Upload):</label>
+                <div class="form-row">
+                    <div class="form-group-half">
+                        <label class="urlUpload">URL:</label>
+                        <input type="url" id="link_pdf_input" name="link_pdf_input" placeholder="Cole a URL do PDF">
+                    </div>
+                    <div class="form-group-half">
+                        <input type="file" id="pdf_file_input" name="pdf" accept=".pdf">
+                    </div>
+                </div>
+
+                <!-- Interruptor para Exibir/Ocultar --><!--
+                <div class="form-group">
+                    <label for="exibir">Exibir Publicação na Página Pública?</label>
+                    <label class="switch">
+                        <input type="checkbox" id="exibir" name="exibir" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-primary">Cadastrar Publicação</button>
+            </form>
+        </div>
+    </div> -->
+
+    <!-- <div id="modal-atualizacao" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Atualizar Publicação</h3>
+            <form id="form-atualizacao">
+                <input type="hidden" id="edit-id" name="id">
+
+                <label for="edit-titulo">Título:</label>
+                <input type="text" id="edit-titulo" name="titulo" required>
+
+                <label for="edit-id_categoria">Categoria:</label>
+                <select id="edit-id_categoria" name="id_categoria" required>
+                    <option value="" disabled selected>Selecione uma categoria</option>
+                    <option value="1">Artigos</option>
+                    <option value="2">Artigos de Conferência (AC)</option>
+                    <option value="3">Capítulos de livros (CL)</option>
+                    <option value="4">Notas Técnicas (NT)</option>
+                </select>
+
+                <div class="image-preview-container">
+                    <span>Imagem Atual:</span>
+                    <input type="hidden" id="edit-url_imagem_existente" name="url_imagem_existente">
+                    <img id="edit-img-preview" src="" alt="Imagem Atual" style="max-width: 100px;">
+                </div>
+
+                <label>Nova Imagem (URL ou Upload):</label>
+                <div class="form-row">
+                    <div class="form-group-half">
+                        <label class="urlUpload">URL:</label>
+                        <input type="text" id="edit-url_imagem_input" name="edit-url_imagem_input" placeholder="Cole a nova URL da imagem">
+                    </div>
+                    <div class="form-group-half">
+                        <label class="urlUpload">Upload:</label>
+                        <input type="file" id="edit-imagem_file_input" name="imagem" accept="image/*">
+                    </div>
+                </div>
+
+                <label for="edit-link_doi">Link DOI:</label>
+                <input type="url" id="edit-link_doi" name="link_doi" required>
+
+                <label>Novo PDF da Publicação (URL ou Upload):</label>
+                <div class="form-row">
+                    <div class="form-group-half">
+                        <label class="urlUpload">URL:</label>
+                        <input type="url" id="edit-link_pdf_input" name="link_pdf" placeholder="Cole a nova URL do PDF">
+                    </div>
+                    <div class="form-group-half">
+                        <label class="urlUpload">Upload:</label>
+                        <input type="file" id="edit-pdf_file_input" name="pdf" accept=".pdf">
+                    </div>
+                </div>
+
+                <!-- Interruptor para Exibir/Ocultar -->
+    <!-- <div class="form-group">
+                    <label for="edit-exibir">Exibir Publicação na Página Pública?</label>
+                    <label class="switch">
+                        <input type="checkbox" id="edit-exibir" name="exibir">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-primary">Atualizar Publicação</button>
+            </form>
+        </div>
+    </div> -->
+
+    <!-- <div id="modal-delecao" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Confirmação de Deleção</h3>
+            <p>Tem certeza que deseja deletar a Publicação: <strong id="delete-titulo-confirm"></strong>?</p>
+            <button id="btn-confirmar-delecao" class="btn-danger">Deletar Publicação</button>
+            <button id="btn-cancelar-delecao" class="btn-secondary">Cancelar</button>
+        </div>
+    </div> -->
+
+    <!-- Elemento de Notificação (Toast) -->
+    <!-- <div id="custom-toast">
+        <span id="toast-message"></span>
+    </div> -->
+
+    <!-- <script src="script.js"></script> -->
+</body>
+
+</html>

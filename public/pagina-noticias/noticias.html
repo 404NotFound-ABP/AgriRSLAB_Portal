@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Notícias Agrirslab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--responsividade-->
+
+    <!-- Linkando o CSS -->
+    <link rel="stylesheet" href="styleNoticias.css">
+    <link rel="stylesheet" href="../HeaderFooter/style.css">
+
+    <!-- Importando fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <header></header>
+
+    <main class="noticias-container">
+
+        <section class="blocos-superiores">
+            <!-- BLOCO 1 -Principais Notícias -->
+            <div class="eventos">
+                <h2 class="titulo-secao">Principais Notícias</h2>
+                <div id='cards-noticias' class="cards-noticias">
+
+                    <div class="ver-todas">
+                        <a href="noticias1.html">Ver todas as notícias</a>
+                    </div>
+                </div>
+            </div>    
+
+            <!-- BLOCO 2 - LINHA DO TEMPO -->
+            <div class="linha-do-tempo">
+                <h2 class="titulo-secao">Eventos</h2>
+                <div class="carrossel-vertical">
+                    <button class="seta-cima">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20">
+                            <path d="M7 14l5-5 5 5z" />
+                        </svg>
+                    </button>
+
+                    <div class="conteudo-linha">
+                    </div>
+
+                    <button class="seta-baixo">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20">
+                            <path d="M7 10l5 5 5-5z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOCO 3 - DEFESAS -->
+        <section class="defesas">
+            <h2 class="titulo-secao">Próximas Defesas</h2>
+
+            <div class="carrossel-horizontal">
+                <button class="seta-esquerda">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30">
+                        <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                    </svg>
+                </button>
+
+                <div class="cards-defesas">
+                 
+                    <div class="card-defesa">
+                    </div>
+                    
+                </div>
+
+                <button class="seta-direita">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30">
+                        <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+    </main>
+
+
+
+    <footer></footer>
+    <script src="../HeaderFooter/menu-header.js"></script>
+    <script src="noticias.js"></script>
+</body>
+
+
+</html>

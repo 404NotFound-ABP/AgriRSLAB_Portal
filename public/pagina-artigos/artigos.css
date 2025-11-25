@@ -1,0 +1,280 @@
+/* ===================== CABEÇALHO ===================== */
+.logo-title-area {
+  display: flex;
+  align-items: center;
+}
+
+.site-logo {
+  width: 120px;
+  height: auto;
+}
+
+/* ===================== SEARCH BOX ===================== */
+.search-box {
+  flex: 1;
+  min-width: 220px;
+  max-width: 260px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: var(--cor-texto-branco);
+  padding-right: 4px !important; 
+  overflow: visible;           
+  gap: 2px !important;                
+}
+
+/* Campo de texto */
+#searchArtigos {
+  flex: 1 !important;
+  padding: 8px 10px !important;
+  border: none !important;
+  outline: none !important;
+  background: var(--cor-texto-branco) !important;
+  font-size: 0.95rem;
+  color: var(--texto-escuro);
+}
+
+/* Botão lupa */
+#btnBuscarArtigos {
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: var(--cor-texto-branco) !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+}
+
+/* Ícone da lupa */
+#btnBuscarArtigos svg {
+  width: 22px !important;
+  height: 22px !important;
+  fill: #5A5A5A !important;
+  stroke: #5A5A5A !important;
+  display: block !important;
+}
+
+/* Botão X (igual header) */
+#btnLimparBusca {
+  width: 36px !important;
+  height: 36px !important;
+  display: none;                    /* só aparece quando digita */
+  justify-content: center !important;
+  align-items: center !important;
+  background: var(--cor-texto-branco) !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+}
+
+#btnLimparBusca svg {
+  width: 22px !important;
+  height: 22px !important;
+  fill: #5A5A5A !important;
+}
+
+/* Remover X automático do Chrome */
+#searchArtigos::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+/* ===================== MENU PRINCIPAL ===================== */
+.main-nav-bar {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  border-bottom: 2px solid #000;
+}
+
+.main-nav-bar a {
+  color: var(--cor-texto-branco);
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 0.9rem;
+  padding: 5px;
+  transition: background-color 0.2s;
+}
+
+.main-nav-bar a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* ===================== FILTROS ===================== */
+.interactive-filters {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 15px;
+  flex-wrap: wrap;
+  background-color: var(--fundo-branco);
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.filter-dropdown {
+  position: relative;
+  flex: 1;
+  min-width: 240px;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cor-texto-branco);
+  color: rgba(51, 51, 51, 0.6);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.filter-toggle:hover {
+  background-color: white;
+  border-color: var(--verde-titulo);
+}
+
+.filter-dropdown.open .filter-toggle {
+  background-color: var(--fundo-branco);
+  border-color: var(--verde-titulo);
+  color: var(--texto-escuro);
+}
+
+.filter-panel {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: var(--cor-texto-branco);
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 10px;
+  min-width: 100%;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 20;
+}
+
+.filter-dropdown.open .filter-panel {
+  display: flex;
+}
+
+.filter-panel label,
+.filter-panel input {
+  color: var(--texto-escuro);
+  font-size: 0.95rem;
+}
+
+.filter-input-text {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn-apply-filter {
+  width: 100%;
+  background-color: var(--verde-escuro);
+  color: var(--cor-texto-branco);
+  border: none;
+  padding: 8px 0;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===================== CONTEÚDO ===================== */
+.publications-main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.publication-card {
+  background-color: var(--azul-clarinho1);
+  border-radius: 9px;
+  padding: 15px;
+  box-shadow: 0 1px 1px var(--azul-escuro);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card-image-box {
+  background-color: var(--cor-texto-branco);
+  border: 1px solid #cce;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.card-image-box img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--texto-escuro);
+  margin-bottom: 15px;
+}
+
+.card-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-card {
+  background-color: var(--cor-texto-branco);
+  color: var(--azul-escuro);
+  padding: 5px 12px;
+  border-radius: 5px;
+  border: 1px solid var(--azul-escuro);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.btn-card:hover {
+  background-color: var(--azul-escuro);
+  color: var(--cor-texto-branco);
+}
+
+/* ===================== MOBILE ===================== */
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .interactive-filters {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .search-box {
+    min-width: 60%;
+  }
+
+  #searchArtigos {
+    font-size: 0.8rem;
+  }
+}

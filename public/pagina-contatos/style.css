@@ -1,0 +1,293 @@
+:root {
+  --azul-clarinho1: #DDF1FB;
+  --azul-clarinho2: #BCE2F7;
+  --verde-1: #36794E;
+  --verde-2: #55A357;
+  --marrom: #604639;
+  --azul1: #0F5289;
+  --azul2: #487DB4;
+  --cinza-BACK: #f8f9fa;
+  --cinza-borda: #e6e6e6;
+  --branco-card: #fff;
+}
+
+/* ==================== BASE ==================== */
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: var(--cinza-BACK);
+}
+
+/* ==================== SEÇÃO FALE CONOSCO ==================== */
+.area-contato {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: var(--cinza-BACK);
+}
+
+.elementos-contato {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* ===== FORMULÁRIO ===== */
+.form-contato {
+  flex: 1 1 420px;
+  padding: 25px 30px 35px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.h3-faleconosco {
+  font-weight: 600;
+  font-size: 28px;
+  color: var(--verde-2);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.caixas-contato {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  font: 400 16px/1.4 "Montserrat", sans-serif;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 8px;
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.caixas-contato:focus {
+  border-color: var(--verde-2);
+}
+
+textarea.caixas-contato {
+  resize: none;
+  height: 150px;
+}
+
+.btn-faleconosco {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: var(--verde-2);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-faleconosco:hover {
+  background: #4b924d;
+}
+
+.btn-faleconosco:active {
+  transform: translateY(2px);
+}
+
+
+/* ==================== SPINNER DE CARREGAMENTO ==================== */
+
+/* O spinner ficará sobre o botão de envio quando o formulário for submetido */
+.spinner-faleconosco {
+  display: none; /* Inicia oculto */
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid var(--cor-texto-branco);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.btn-faleconosco.loading .spinner-faleconosco {
+    display: inline-block;
+}
+.btn-faleconosco.loading {
+    cursor: not-allowed;
+    pointer-events: none; 
+    background: #4b924d; 
+    color: transparent; 
+}
+.btn-faleconosco.loading span {
+    display: none; 
+}
+/* ==================== MENSAGEM DE FEEDBACK ==================== */
+.form-message {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: none; /* Inicia oculto */
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-message.success {
+  background-color: #e6f6e7;
+  color: var(--texto-sucesso);
+  border: 1px solid var(--texto-sucesso);
+}
+
+.form-message.error {
+  background-color: #fce7e7;
+  color: var(--texto-erro);
+  border: 1px solid var(--texto-erro);
+}
+
+
+
+/* ===== MAPA E REDES ===== */
+.mapa-contato {
+  flex: 1 1 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 15px;
+}
+
+.h3-contato {
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--verde-2);
+  margin-bottom: 10px;
+}
+
+.endereco-contato {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.mapa-estilizado {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 260px;
+}
+
+/* ===== ÍCONES REDES SOCIAIS ===== */
+.contato-redes-sociais {
+  height: 42px;
+  width: 42px;
+  margin-right: 10px;
+}
+
+.contato-redes-sociais path,
+.contato-redes-sociais line,
+.contato-redes-sociais polyline,
+.contato-redes-sociais circle,
+.contato-redes-sociais rect {
+  stroke: var(--verde-2);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .elementos-contato {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .form-contato, .mapa-contato {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .h3-faleconosco {
+    font-size: 26px;
+  }
+
+  .h3-contato {
+    text-align: center;
+  }
+
+  .endereco-contato {
+    text-align: center;
+  }
+
+  .mapa-estilizado {
+    height: 220px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 678px) {
+  .area-contato {
+    padding: 20px 10px;
+  }
+
+  .elementos-contato {
+    margin: 0;
+    gap: 20px;
+  }
+
+  .form-contato {
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .h3-faleconosco,
+  .h3-contato {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .caixas-contato {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .btn-faleconosco {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .mapa-estilizado {
+    height: 200px;
+  }
+
+  .contato-redes-sociais {
+    height: 38px;
+    width: 38px;
+  }
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Vagas</title>
+
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="headerTop">
+            <img class="imageLogo" src="/assets/Imagens do laboratorio/logo.png" alt="">
+            <h1 class="h1HEADER">Painel Administrativo</h1>
+            <form id="logoutForm" action="/logout" method="POST" style="display:inline">
+                <button class="button-logout" type="submit" aria-label="Sair" title="Sair">
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.9999 2C10.2385 2 7.99991 4.23858 7.99991 7C7.99991 7.55228 8.44762 8 8.99991 8C9.55219 8 9.99991 7.55228 9.99991 7C9.99991 5.34315 11.3431 4 12.9999 4H16.9999C18.6568 4 19.9999 5.34315 19.9999 7V17C19.9999 18.6569 18.6568 20 16.9999 20H12.9999C11.3431 20 9.99991 18.6569 9.99991 17C9.99991 16.4477 9.55219 16 8.99991 16C8.44762 16 7.99991 16.4477 7.99991 17C7.99991 19.7614 10.2385 22 12.9999 22H16.9999C19.7613 22 21.9999 19.7614 21.9999 17V7C21.9999 4.23858 19.7613 2 16.9999 2H12.9999Z"
+                            fill="#fff" />
+                        <path
+                            d="M13.9999 11C14.5522 11 14.9999 11.4477 14.9999 12C14.9999 12.5523 14.5522 13 13.9999 13V11Z"
+                            fill="#fff" />
+                        <path
+                            d="M5.71783 11C5.80685 10.8902 5.89214 10.7837 5.97282 10.682C6.21831 10.3723 6.42615 10.1004 6.57291 9.90549C6.64636 9.80795 6.70468 9.72946 6.74495 9.67492L6.79152 9.61162L6.804 9.59454L6.80842 9.58848C6.80846 9.58842 6.80892 9.58778 5.99991 9L6.80842 9.58848C7.13304 9.14167 7.0345 8.51561 6.58769 8.19098C6.14091 7.86637 5.51558 7.9654 5.19094 8.41215L5.18812 8.41602L5.17788 8.43002L5.13612 8.48679C5.09918 8.53682 5.04456 8.61033 4.97516 8.7025C4.83623 8.88702 4.63874 9.14542 4.40567 9.43937C3.93443 10.0337 3.33759 10.7481 2.7928 11.2929L2.08569 12L2.7928 12.7071C3.33759 13.2519 3.93443 13.9663 4.40567 14.5606C4.63874 14.8546 4.83623 15.113 4.97516 15.2975C5.04456 15.3897 5.09918 15.4632 5.13612 15.5132L5.17788 15.57L5.18812 15.584L5.19045 15.5872C5.51509 16.0339 6.14091 16.1336 6.58769 15.809C7.0345 15.4844 7.13355 14.859 6.80892 14.4122L5.99991 15C6.80892 14.4122 6.80897 14.4123 6.80892 14.4122L6.804 14.4055L6.79152 14.3884L6.74495 14.3251C6.70468 14.2705 6.64636 14.1921 6.57291 14.0945C6.42615 13.8996 6.21831 13.6277 5.97282 13.318C5.89214 13.2163 5.80685 13.1098 5.71783 13H13.9999V11H5.71783Z"
+                            fill="#fff" />
+                    </svg>
+                    <span>Sair
+                    </span>
+                </button>
+            </form>
+        </div>
+    </header>
+
+
+    <div class="sidebar">
+        <span>Páginas:</span>
+        <a class="admin-selecionavel" href="artigos-admin.html">📖 Artigos</a>
+        <a class="admin-selecionavel" href="noticias-admin.html">📰 Notícias</a>
+        <a class="admin-selecionavel" href="membros-admin.html">👥 Membros</a>
+        <a class="admin-selecionavel" href="projetos-admin.html">🧪 Projetos</a>
+
+        <a class="admin-atual" href="vagas-admin.html">💼 Vagas</a>
+    </div>
+
+    <div class="main">
+
+        <div class="admin-membros-header">
+            <div class="admin-membros-texto">
+                <h2 class="titulo-secao">Gerenciamento de Vagas</h2>
+                <p class="admin-membros-descricao">
+                    Aqui você pode cadastrar, editar e excluir vagas do AgriRSLab.
+                </p>
+            </div>
+
+            <button id="btn-abrir-cadastro" class="btn-primary btnCadastro">
+                + Cadastrar Nova Vaga
+            </button>
+        </div>
+
+        <section id="container-vagas">
+            <h2>Carregando vagas...</h2>
+        </section>
+
+    </div>
+    </div>
+
+    <!-- MODAL CADASTRO -->
+    <!-- MODAL CADASTRO -->
+    <div id="modal-cadastro" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Cadastrar Nova Vaga</h3>
+
+            <form id="form-cadastro">
+
+                <label>Título *</label>
+                <input type="text" id="cad-titulo" required>
+
+                <label>Descrição *</label>
+                <textarea id="cad-descricao" rows="4" required></textarea>
+
+                <label>Link para candidatura *</label>
+                <input type="url" id="cad-link">
+
+                <hr>
+
+                <h4>Requisitos</h4>
+                <div id="cad-requisitos-list"></div>
+                <button type="button" id="btn-add-requisito" class="btn-secondary">+ Adicionar requisito</button>
+
+                <hr>
+
+                <h4>Benefícios</h4>
+                <div id="cad-beneficios-list"></div>
+                <button type="button" id="btn-add-beneficio" class="btn-secondary">+ Adicionar benefício</button>
+
+                <hr>
+
+                <label class="form-group">
+                    <span>Exibir no site?</span>
+                    <label class="switch">
+                        <input type="checkbox" id="cad-exibir" checked>
+                        <span class="slider"></span>
+                    </label>
+                </label>
+
+                <button type="submit" class="btn-primary">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- MODAL EDITAR -->
+    <!-- MODAL EDITAR -->
+    <div id="modal-editar" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Editar Vaga</h3>
+
+            <form id="form-editar">
+                <input type="hidden" id="edit-id">
+
+                <label>Título *</label>
+                <input type="text" id="edit-titulo" required>
+
+                <label>Descrição *</label>
+                <textarea id="edit-descricao" rows="4" required></textarea>
+
+                <label>Link para candidatura *</label>
+                <input type="url" id="edit-link">
+
+                <hr>
+
+                <h4>Requisitos</h4>
+                <div id="edit-requisitos-list"></div>
+                <button type="button" id="btn-edit-add-requisito" class="btn-secondary">
+                    + Adicionar requisito
+                </button>
+
+                <hr>
+
+                <h4>Benefícios</h4>
+                <div id="edit-beneficios-list"></div>
+                <button type="button" id="btn-edit-add-beneficio" class="btn-secondary">
+                    + Adicionar benefício
+                </button>
+
+                <hr>
+
+                <label class="form-group">
+                    <span>Exibir no site?</span>
+                    <label class="switch">
+                        <input type="checkbox" id="edit-exibir">
+                        <span class="slider"></span>
+                    </label>
+                </label>
+
+                <button type="submit" class="btn-primary">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- MODAL DELETAR -->
+    <div id="modal-deletar" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Excluir Vaga</h3>
+            <p>Tem certeza que deseja excluir a vaga <strong id="del-nome"></strong>?</p>
+            <button id="btn-confirmar-delete" class="btn-danger">Excluir</button>
+            <button id="btn-cancelar-delete" class="btn-secondary">Cancelar</button>
+        </div>
+    </div>
+
+    <div id="custom-toast">
+        <span id="toast-message"></span>
+    </div>
+
+    <div class="admin-footer-wrapper">
+        <footer class="admin-footer">
+            <div class="mensagem-admin">
+                2025 AgrisLab | Feito por equipe
+                <a href="https://github.com/404NotFound-ABP/AgriRSLAB_Portal">Fatec 404 Not Found
+                    <svg class="link-externo" width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g id="Interface / External_Link">
+                            <path id="Vector"
+                                d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11"
+                                stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="vagas-admin.js"></script>
+    <script src="authGuard.js"></script>
+
+</body>
+
+</html>
