@@ -94,8 +94,13 @@ Legenda IDs
 
 | ID      | Atividade | Pontuação | Disciplina | Sprint |
 |---------|-----------|-----------|------------|--------|
+<<<<<<< HEAD
 | *ES-014* | *Scrum Master:* Facilitar cerimônias ágeis (Daily, Planning, Review, Retrospective), acompanhar impedimentos, garantir comunicação eficaz e apoiar a equipe na aplicação do DoD. | 20 | ES | 1 |
 | *ES-015* | *Product Owner:* Refinar e priorizar backlog, alinhar requisitos com stakeholders, validar entregas nas reviews e garantir clareza nos critérios de aceitação. | 20 | ES | 1|
+=======
+| *ES-014* | *Scrum Master:* Facilitar cerimônias ágeis (Daily, Planning, Review, Retrospective), acompanhar impedimentos, garantir comunicação eficaz e apoiar a equipe na aplicação do DoD. | 20 | ES | 1,2,3 |
+| *ES-015* | *Product Owner:* Refinar e priorizar backlog, alinhar requisitos com stakeholders, validar entregas nas reviews e garantir clareza nos critérios de aceitação. | 20 | ES | 1,2,3 |
+>>>>>>> 6df3454a050d31f970cccc2bd1bc604c16cd96ad
 
 
 

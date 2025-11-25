@@ -105,8 +105,15 @@
 }
 
 .mensagem-admin svg {
+<<<<<<< HEAD
     margin-left: 5px; /* Espaço entre o texto e o ícone */
     vertical-align: middle; /* Alinha o ícone com o texto */
+=======
+    margin-left: 5px;
+    /* Espaço entre o texto e o ícone */
+    vertical-align: middle;
+    /* Alinha o ícone com o texto */
+>>>>>>> 6df3454a050d31f970cccc2bd1bc604c16cd96ad
 }
 
 .admin-footer-wrapper {
@@ -114,7 +121,11 @@
     bottom: 0;
     left: 0;
     width: 100%;
+<<<<<<< HEAD
     z-index: 9999;
+=======
+    z-index: 1000;
+>>>>>>> 6df3454a050d31f970cccc2bd1bc604c16cd96ad
 }
 
 .admin-footer {
@@ -136,7 +147,11 @@
     font-size: 16px;
 }
 
+<<<<<<< HEAD
 .mensagem-admin > a {
+=======
+.mensagem-admin>a {
+>>>>>>> 6df3454a050d31f970cccc2bd1bc604c16cd96ad
     font-weight: bold;
     color: var(--fundo-branco);
     text-decoration: underline;
@@ -177,6 +192,31 @@
     margin-left: 10px;
 }
 
+<<<<<<< HEAD
+=======
+.voltar-ao-site {
+    display: block;
+    color: black;
+    padding: 12px 20px;
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.voltar-ao-site:hover {
+    display: block;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    background-color: #007bff;
+    border-radius: 10px;
+    margin: 10px;
+    font-weight: bold;
+}
+
+>>>>>>> 6df3454a050d31f970cccc2bd1bc604c16cd96ad
 .sidebar>span {
     display: block;
     color: white;
@@ -186,7 +226,11 @@
     font-size: larger;
 }
 
+<<<<<<< HEAD
 .sidebar > .admin-selecionavel:hover {
+=======
+.sidebar>.admin-selecionavel:hover {
+>>>>>>> 6df3454a050d31f970cccc2bd1bc604c16cd96ad
     background-color: var(--verde-claro);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -281,11 +325,19 @@ img {
 ====================================== */
 
 header {
+<<<<<<< HEAD
     position: fixed; 
     top: 0;
     left: 0;
     width: 100%; 
     z-index: 1000; 
+=======
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+>>>>>>> 6df3454a050d31f970cccc2bd1bc604c16cd96ad
     background-color: var(--verde-escuro);
 }
 

@@ -29,7 +29,11 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
     // Redireciona para a dashboard
     setTimeout(() => {
+<<<<<<< HEAD
         window.location.href = "/admin/artigos-admin.html"; // Ajuste para sua página inicial do admin
+=======
+        window.location.href = "/admin/artigos-admin.html"; // Seletor para a página inicial do admin
+>>>>>>> 6df3454a050d31f970cccc2bd1bc604c16cd96ad
     }, 1000);
 
   } catch (err) {

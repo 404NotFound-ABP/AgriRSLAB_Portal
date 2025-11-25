@@ -111,11 +111,20 @@
    MODAIS (COMPARTILHADO)
 ================================ */
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6df3454a050d31f970cccc2bd1bc604c16cd96ad
 .modal {
   display: none;
   position: fixed;
   inset: 0;
+<<<<<<< HEAD
   z-index: 999;
+=======
+  z-index: 2000;
+>>>>>>> 6df3454a050d31f970cccc2bd1bc604c16cd96ad
   background-color: rgba(0, 0, 0, 0.4);
 }
 
